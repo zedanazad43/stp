@@ -88,18 +88,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pag
-        MJKing 🦉, [12/01/2026 01:18 ص]
-+4915216933122هذا هو رقم هاتفي وتلغرامي وواتس اب
-- name: Checkout
-  uses: actions/checkout@v4
-
-- name: Setup pnpm
-  uses: pnpm/action-setup@v4
-  with:
-    version: 8
-
-- name: Setup Node.js
-  uses: actions/setup-node@v4
-  with:
-    node-version: 20
-    cache: 'pnpm'
