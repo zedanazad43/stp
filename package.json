@@ -1,0 +1,21 @@
+{
+  "name": "stampcoin-platform",
+  "version": "1.0.0",
+  "description": "Stampcoin Digital Platform - Blockchain-based digital stamps platform",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build step required for basic server'",
+    "test": "echo 'No tests defined yet'",
+    "lint": "echo 'No linting configured yet'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.x"
+  }
+}
