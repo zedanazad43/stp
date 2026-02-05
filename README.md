@@ -88,7 +88,7 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
 See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
-###Quick Start
+### Quick Start
 
 ```bash
 # Clone repository
