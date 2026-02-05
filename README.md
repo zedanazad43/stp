@@ -1,10 +1,7 @@
 # Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
 
-<<<<<<< HEAD
 🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.html)**
 
-=======
->>>>>>> main
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
 > **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
@@ -25,7 +22,6 @@ Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا 
 - تكامل API وخدمات إضافية
 
 ### الإنطلاق
-<<<<<<< HEAD
 ```bash
 git clone https://github.com/zedanazad43/stp.git
 cd stp
@@ -36,14 +32,6 @@ npm run build
 
 🌐 **[زيارة الموقع الرسمي](https://zedanazad43.github.io/stp/)**
 
-=======
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
-
->>>>>>> main
 ---
 
 ## English 🇬🇧
@@ -59,25 +47,16 @@ Stampcoin is an innovative platform for digital currency based on blockchain tec
 - API integration
 
 ### Start
-<<<<<<< HEAD
 ```bash
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 See [INSTALLATION.md](INSTALLATION.md) for more.
 
-🌐 **[Visit Official Website](https://zedanazad43.github.io/stp/)**
+🌐 **[Visit Website](https://zedanazad43.github.io/stp/)**
 
-=======
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
-
->>>>>>> main
 ---
 
 ## Deutsch 🇩🇪
@@ -93,104 +72,45 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 - API-Integration
 
 ### Start
-<<<<<<< HEAD
 ```bash
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
-🌐 **[Offizielle Website besuchen](https://zedanazad43.github.io/stp/)**
+🌐 **[Website besuchen](https://zedanazad43.github.io/stp/)**
 
-=======
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
-
->>>>>>> main
 ---
 
-## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung
+## 📦 Installation
 
-### العربية 🇸🇦
-#### المتطلبات الأساسية
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
+See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
-#### بدء التطوير
+###Quick Start
+
 ```bash
+# Clone repository
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+
+# Install dependencies
 npm install
-npm run dev
-```
 
-#### البناء للإنتاج
-```bash
-npm run build
-npm run start
-```
+# Development
+npm run dev         # Start development server
+npm run build       # Build for production
+npm run serve       # Serve built files locally
+npm run clean       # Clean build artifacts
 
-#### الاختبارات
-```bash
-npm test
-npm run lint
-```
-
-### English 🇬🇧
-#### Prerequisites
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
-
-#### Development
-```bash
-npm install
-npm run dev
-```
-
-#### Production Build
-```bash
-npm run build
-npm run start
-```
-
-#### Testing
-```bash
-npm test
-npm run lint
-```
-
-### Deutsch 🇩🇪
-#### Voraussetzungen
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
-
-#### Entwicklung
-```bash
-npm install
-npm run dev
-```
-
-#### Produktion
-```bash
-npm run build
-npm run start
-```
-
-#### Tests
-```bash
+# Testing
 npm test
 npm run lint
 ```
 
 ---
 
-<<<<<<< HEAD
 ## 🌐 Website & Publishing / الموقع الإلكتروني / Website & Veröffentlichung
 
 The Stampcoin platform includes an official website hosted on GitHub Pages:
@@ -221,8 +141,6 @@ The website is automatically deployed to GitHub Pages when changes are pushed to
 
 ---
 
-=======
->>>>>>> main
 ## الأمان / Security / Sicherheit
 
 ⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG**
@@ -240,70 +158,3 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 ### License
 
 See LICENSE for license information.
-<<<<<<< HEAD
-=======
-# Stampcoin منصة / Platform / Plattform
-
----
-
-## العربية 🇸🇦
-
-### الوصف
-Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
-
-### المميزات
-- محفظة طوابع رقمية
-- تعاملات آمنة بين المستخدمين
-- سوق طوابع رقمية ومقتنيات حديثة
-- إدارة ملفات المستخدم والتحقق
-- تكامل API وخدمات إضافية
-
-### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
-
----
-
-## English 🇬🇧
-
-### Description
-Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
-
-### Features
-- Digital stamps wallet
-- Secure peer-to-peer transfers
-- Marketplace for digital stamps & collectibles
-- User profile & verification
-- API integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
-
----
-
-## Deutsch 🇩🇪
-
-### Beschreibung
-Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Briefmarken, Prämien und loyale Sammler.
-
-### Haupt-Features
-- Digitale Wallet für Stampcoins
-- Sichere Nutzer-Transaktionen
-- Märkte für Sammlerstücke und Stampcoins
-- Nutzerprofile & Verifikationen
-- API-Integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
->>>>>>> main
