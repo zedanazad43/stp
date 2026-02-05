@@ -1,5 +1,7 @@
 # Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
 
+🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.html)**
+
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
 > **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
@@ -20,11 +22,15 @@ Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا 
 - تكامل API وخدمات إضافية
 
 ### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+```bash
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+npm install
+npm run build
 ```
 لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
+
+🌐 **[زيارة الموقع الرسمي](https://zedanazad43.github.io/stp/)**
 
 ---
 
@@ -41,11 +47,15 @@ Stampcoin is an innovative platform for digital currency based on blockchain tec
 - API integration
 
 ### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+```bash
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+npm install
+npm run build
 ```
 See [INSTALLATION.md](INSTALLATION.md) for more.
+
+🌐 **[Visit Official Website](https://zedanazad43.github.io/stp/)**
 
 ---
 
@@ -62,11 +72,15 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 - API-Integration
 
 ### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+```bash
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+npm install
+npm run build
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
+
+🌐 **[Offizielle Website besuchen](https://zedanazad43.github.io/stp/)**
 
 ---
 
@@ -146,6 +160,36 @@ npm run lint
 
 ---
 
+## 🌐 Website & Publishing / الموقع الإلكتروني / Website & Veröffentlichung
+
+The Stampcoin platform includes an official website hosted on GitHub Pages:
+
+**🔗 Live Website**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+
+### Building the Website Locally
+
+```bash
+# Build the static website
+npm run build
+
+# Serve locally for testing
+npm run serve
+# Visit http://localhost:8000
+```
+
+### Deployment
+
+The website is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. The deployment workflow is configured in `.github/workflows/pages.yml`.
+
+**Features:**
+- 🌍 Multilingual support (Arabic, English, German)
+- 📱 Responsive design
+- 🎨 Modern, professional UI
+- 🚀 Fast static site generation
+- 📦 Automatic deployment via GitHub Actions
+
+---
+
 ## الأمان / Security / Sicherheit
 
 ⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG**
@@ -163,67 +207,3 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 ### License
 
 See LICENSE for license information.
-# Stampcoin منصة / Platform / Plattform
-
----
-
-## العربية 🇸🇦
-
-### الوصف
-Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
-
-### المميزات
-- محفظة طوابع رقمية
-- تعاملات آمنة بين المستخدمين
-- سوق طوابع رقمية ومقتنيات حديثة
-- إدارة ملفات المستخدم والتحقق
-- تكامل API وخدمات إضافية
-
-### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
-
----
-
-## English 🇬🇧
-
-### Description
-Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
-
-### Features
-- Digital stamps wallet
-- Secure peer-to-peer transfers
-- Marketplace for digital stamps & collectibles
-- User profile & verification
-- API integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
-
----
-
-## Deutsch 🇩🇪
-
-### Beschreibung
-Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Briefmarken, Prämien und loyale Sammler.
-
-### Haupt-Features
-- Digitale Wallet für Stampcoins
-- Sichere Nutzer-Transaktionen
-- Märkte für Sammlerstücke und Stampcoins
-- Nutzerprofile & Verifikationen
-- API-Integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)

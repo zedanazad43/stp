@@ -1,0 +1,19 @@
+{
+  "name": "stampcoin-platform",
+  "version": "1.0.0",
+  "description": "Stampcoin - Digital Platform for Blockchain-based Stamp Trading",
+  "scripts": {
+    "build": "mkdir -p dist && cp -r docs/* dist/ && cp index.html dist/ && cp -r assets dist/ 2>/dev/null || true",
+    "serve": "python3 -m http.server 8000",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "stampcoin",
+    "blockchain",
+    "digital-stamps",
+    "collectibles",
+    "marketplace"
+  ],
+  "author": "Azad Zedan",
+  "license": "MIT"
+}
