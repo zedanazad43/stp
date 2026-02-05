@@ -220,4 +220,3 @@ git clone https://github.com/stampcoin-platform/stampcoin-platform.git
 cd stampcoin-platform
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
->>>>>>> a222ad6685074a5b979a259945c1e6c46931445b

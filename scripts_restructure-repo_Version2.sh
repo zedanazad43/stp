@@ -134,7 +134,7 @@ done
 
 # Archive versioned files and backups into docs/archive
 mkdir -p docs/archive
-for pat in *Version* "* (1).*" "*_Version*; do
+for pat in *Version* "* (1).*" "*_Version*"; do
   for file in $pat; do
     [ -e "$file" ] || continue
     # only move if still tracked at root

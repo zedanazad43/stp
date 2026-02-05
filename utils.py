@@ -249,7 +249,7 @@ def read_dataset(
                         suffix += line
             
     else:
-        raise f"Dataset: {dataset_type} not supported."
+        raise ValueError(f"Dataset: {dataset_type} not supported.")
 
     return dataset
 
@@ -282,7 +282,7 @@ def read_translation_dataset(
             prompt += dataset_tgt[k.split("/")[-1]]["declaration"]
             dataset_src[k]["prompt"] = prompt
     else:
-        raise f"Dataset: {dataset_type} not supported."
+        raise ValueError(f"Dataset: {dataset_type} not supported.")
 
     return dataset_src
 
