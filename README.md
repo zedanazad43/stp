@@ -1,5 +1,12 @@
 # Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
 
+> **📦 Repository Preservation Notice**  
+> This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
+> **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
+> For detailed preservation information, see [PRESERVATION_NOTES.md](PRESERVATION_NOTES.md) and [FILE_INVENTORY.md](FILE_INVENTORY.md)
+
+---
+
 ## العربية 🇸🇦
 
 ### الوصف
