@@ -1,11 +1,24 @@
 {
   "name": "stampcoin-platform",
   "version": "1.0.0",
-  "description": "Stampcoin - Digital Platform for Blockchain-based Stamp Trading",
+  "description": "Stampcoin Digital Platform - Blockchain-based digital stamps platform",
+  "main": "server.js",
+  "private": true,
   "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
     "build": "mkdir -p dist && cp -r docs/* dist/ && cp index.html dist/ && cp -r assets dist/ 2>/dev/null || true",
     "serve": "python3 -m http.server 8000",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "echo 'No tests defined yet'",
+    "lint": "echo 'No linting configured yet'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.x"
   },
   "keywords": [
     "stampcoin",
