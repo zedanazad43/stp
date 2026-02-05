@@ -1,6 +1,6 @@
 # Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
 
-🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.md)**
+🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.html)**
 
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
