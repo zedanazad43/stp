@@ -77,6 +77,15 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (اختياري - للتشغيل باستخدام حاويات Docker)
+
+#### التشغيل باستخدام Docker (موصى به)
+```bash
+# تأكد من تشغيل Docker Desktop أولاً
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# افتح المتصفح على: http://localhost:8080
+```
 
 #### بدء التطوير
 ```bash
@@ -101,6 +110,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (optional - for running with Docker containers)
+
+#### Running with Docker (Recommended)
+```bash
+# Ensure Docker Desktop is running first
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Open browser to: http://localhost:8080
+```
 
 #### Development
 ```bash
@@ -125,6 +143,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (optional - für Ausführung mit Docker-Containern)
+
+#### Mit Docker ausführen (Empfohlen)
+```bash
+# Stelle sicher, dass Docker Desktop läuft
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Öffne Browser auf: http://localhost:8080
+```
 
 #### Entwicklung
 ```bash
