@@ -34,7 +34,7 @@ jobs:
           if [ ! -f _site/index.html ]; then
             echo "Creating index.html..."
             cat > _site/index.html << 'EOF'
-                    <!DOCTYPE html>
+          <!DOCTYPE html>
           <html lang="en">
           <head>
               <meta charset="UTF-8">
