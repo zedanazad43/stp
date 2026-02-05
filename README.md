@@ -51,11 +51,11 @@ Stampcoin is an innovative platform for digital currency based on blockchain tec
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 See [INSTALLATION.md](INSTALLATION.md) for more.
 
-🌐 **[Visit Official Website](https://zedanazad43.github.io/stp/)**
+🌐 **[Visit Website](https://zedanazad43.github.io/stp/)**
 
 ---
 
@@ -76,84 +76,35 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
-🌐 **[Offizielle Website besuchen](https://zedanazad43.github.io/stp/)**
+🌐 **[Website besuchen](https://zedanazad43.github.io/stp/)**
 
 ---
 
-## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung
+## 📦 Installation
 
-### العربية 🇸🇦
-#### المتطلبات الأساسية
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
+See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
-#### بدء التطوير
+### Quick Start
+
 ```bash
+# Clone repository
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+
+# Install dependencies
 npm install
-npm run dev
-```
 
-#### البناء للإنتاج
-```bash
-npm run build
-npm run start
-```
+# Development
+npm run dev         # Start development server
+npm run build       # Build for production
+npm run serve       # Serve built files locally
+npm run clean       # Clean build artifacts
 
-#### الاختبارات
-```bash
-npm test
-npm run lint
-```
-
-### English 🇬🇧
-#### Prerequisites
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
-
-#### Development
-```bash
-npm install
-npm run dev
-```
-
-#### Production Build
-```bash
-npm run build
-npm run start
-```
-
-#### Testing
-```bash
-npm test
-npm run lint
-```
-
-### Deutsch 🇩🇪
-#### Voraussetzungen
-- Node.js >= 16.x
-- Python >= 3.8
-- Git
-
-#### Entwicklung
-```bash
-npm install
-npm run dev
-```
-
-#### Produktion
-```bash
-npm run build
-npm run start
-```
-
-#### Tests
-```bash
+# Testing
 npm test
 npm run lint
 ```
