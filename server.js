@@ -15,6 +15,7 @@ function readData() {
     const raw = fs.readFileSync(DATA_FILE, "utf8");
     return JSON.parse(raw);
   } catch (e) {
+    console.error("Error reading data file:", e.message);
     return [];
   }
 }
@@ -31,7 +32,13 @@ function writeData(todos) {
 function requireToken(req, res, next) {
   const auth = req.get("Authorization") || "";
   const token = auth.replace(/^Bearer\s+/i, "");
-  if (!SYNC_TOKEN || token !== SYNC_TOKEN) {
+  // Allow unauthenticated access in development when SYNC_TOKEN is not set
+  // In production, always set SYNC_TOKEN environment variable
+  if (!SYNC_TOKEN) {
+    console.warn("SYNC_TOKEN not configured - authentication disabled (development mode)");
+    return next();
+  }
+  if (token !== SYNC_TOKEN) {
     return res.status(401).json({ error: "Unauthorized" });
   }
   next();
@@ -54,5 +61,5 @@ app.post("/sync", requireToken, (req, res) => {
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
-  console.log(`todo-sync-backend listening on port ${port}`);
+  console.log(`Stampcoin Platform server listening on port ${port}`);
 });
