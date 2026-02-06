@@ -8,6 +8,7 @@ yarn-error.log*
 dist/
 build/
 _site/
+public/
 *.log
 
 # Environment variables
