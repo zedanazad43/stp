@@ -7,6 +7,14 @@
 
 ---
 
+## 🌐 Website
+
+**Live Website**: https://zedanazad43.github.io/stp/
+
+Visit our website to explore the Stampcoin platform features and roadmap.
+
+---
+
 ## العربية 🇸🇦
 
 ### الوصف
@@ -21,8 +29,8 @@ Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا 
 
 ### الإنطلاق
 ```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+git clone https://github.com/zedanazad43/stp.git
+cd stp
 ```
 لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
 
@@ -42,8 +50,8 @@ Stampcoin is an innovative platform for digital currency based on blockchain tec
 
 ### Start
 ```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+git clone https://github.com/zedanazad43/stp.git
+cd stp
 ```
 See [INSTALLATION.md](INSTALLATION.md) for more.
 
@@ -63,8 +71,8 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 
 ### Start
 ```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
+git clone https://github.com/zedanazad43/stp.git
+cd stp
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
@@ -77,6 +85,15 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (اختياري - للتشغيل باستخدام حاويات Docker)
+
+#### التشغيل باستخدام Docker (موصى به)
+```bash
+# تأكد من تشغيل Docker Desktop أولاً
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# افتح المتصفح على: http://localhost:8080
+```
 
 #### بدء التطوير
 ```bash
@@ -101,6 +118,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (optional - for containerized deployment)
+
+#### Docker Quick Start (Recommended)
+```bash
+# Ensure Docker Desktop is running first
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Open browser to: http://localhost:8080
+```
 
 #### Development
 ```bash
@@ -125,6 +151,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.8
 - Git
+- Docker Desktop (optional - für containerisierte Bereitstellung)
+
+#### Docker-Schnellstart (Empfohlen)
+```bash
+# Stelle sicher, dass Docker Desktop läuft
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Öffne Browser: http://localhost:8080
+```
 
 #### Entwicklung
 ```bash
@@ -163,67 +198,3 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 ### License
 
 See LICENSE for license information.
-# Stampcoin منصة / Platform / Plattform
-
----
-
-## العربية 🇸🇦
-
-### الوصف
-Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
-
-### المميزات
-- محفظة طوابع رقمية
-- تعاملات آمنة بين المستخدمين
-- سوق طوابع رقمية ومقتنيات حديثة
-- إدارة ملفات المستخدم والتحقق
-- تكامل API وخدمات إضافية
-
-### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
-
----
-
-## English 🇬🇧
-
-### Description
-Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
-
-### Features
-- Digital stamps wallet
-- Secure peer-to-peer transfers
-- Marketplace for digital stamps & collectibles
-- User profile & verification
-- API integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
-
----
-
-## Deutsch 🇩🇪
-
-### Beschreibung
-Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Briefmarken, Prämien und loyale Sammler.
-
-### Haupt-Features
-- Digitale Wallet für Stampcoins
-- Sichere Nutzer-Transaktionen
-- Märkte für Sammlerstücke und Stampcoins
-- Nutzerprofile & Verifikationen
-- API-Integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
