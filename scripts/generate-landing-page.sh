@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Script to generate the static landing page HTML
 # Usage: bash scripts/generate-landing-page.sh <output_directory>
