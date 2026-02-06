@@ -7,6 +7,7 @@
 
 ### المتطلبات الأساسية
 - خادم Linux (Ubuntu 20.04 أو أحدث موصى به)
+- Node.js 18.x أو أحدث (مطلوب لبناء التطبيق)
 - لا يقل عن 2GB RAM
 - مساحة قرص 10GB على الأقل
 - اتصال إنترنت مستقر
@@ -67,6 +68,7 @@ This document explains how to set up a self-hosted GitHub Actions runner for thi
 
 ### Prerequisites
 - Linux server (Ubuntu 20.04 or newer recommended)
+- Node.js 18.x or newer (required for building the application)
 - At least 2GB RAM
 - Minimum 10GB disk space
 - Stable internet connection
@@ -127,6 +129,7 @@ Dieses Dokument erklärt, wie man einen selbst gehosteten GitHub Actions Runner 
 
 ### Voraussetzungen
 - Linux-Server (Ubuntu 20.04 oder neuer empfohlen)
+- Node.js 18.x oder neuer (erforderlich für den Anwendungsbau)
 - Mindestens 2GB RAM
 - Mindestens 10GB Speicherplatz
 - Stabile Internetverbindung

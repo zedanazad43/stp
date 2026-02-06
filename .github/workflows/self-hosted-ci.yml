@@ -20,6 +20,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
+          # Node.js 18 matches minimum version in package.json (>=16.x)
+          # Using LTS version 18 for stability and long-term support
           node-version: '18'
           cache: 'npm'
 
