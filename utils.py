@@ -246,18 +246,15 @@ def read_dataset(
                         continue
                     if first_line_flag:
                         first_line_flag = False
-                        # Add line as-is for first line
                         if not insert_flag:
                             prefix_lines.append(line)
                         else:
                             suffix_lines.append(line)
                     else:
-                        # Add newline prefix for subsequent lines
                         if not insert_flag:
                             prefix_lines.append("\n" + line)
                         else:
                             suffix_lines.append("\n" + line)
-                # Join all accumulated lines
                 prefix = "".join(prefix_lines)
                 suffix = "".join(suffix_lines)
             
@@ -391,13 +388,10 @@ def cleanup_code(
         for w in end_words:
             if w == "\ndef":
                 if code.count(w) > 1:
-                    pos = code.rfind(w)
-                    if pos != -1:
-                        code = code[:pos]
+                    code = code[:code.rfind(w)]
             else:
-                pos = code.rfind(w)
-                if pos != -1:
-                    code = code[:pos]
+                if w in code:  # Only call rfind if w exists
+                    code = code[:code.rfind(w)]
         code = first_block(code, stop_words)
     elif dataset_type == "humanevalx":
         if language_type.lower() == "python":
@@ -415,9 +409,7 @@ def cleanup_code(
                 end_words = ["\ndef", "\nclass", "\n#", "\nassert", '\n"""', "\nprint", "\nif", "\n\n\n"]
                 for w in end_words:
                     if w in code:
-                        pos = code.rfind(w)
-                        if pos != -1:
-                            code = code[:pos]
+                        code = code[:code.rfind(w)]
         elif language_type.lower() == "java":
             main_pos = code.find("public static void main")
             if main_pos != -1:
@@ -431,16 +423,14 @@ def cleanup_code(
             if open_braces + 1 == close_braces:
                 code += "\n}"
         elif language_type.lower() == "go":
-            func_main_pos = code.rfind("func main(")
-            if func_main_pos != -1:
-                code = code[:func_main_pos]
+            if "\nfunc main(" in code:
+                code = code[:code.rfind("\nfunc main(")]
             close_brace_pos = code.rfind('}')
             if close_brace_pos != -1:
                 code = code[:close_brace_pos] + '}'
         elif language_type.lower() == "cpp":
-            main_pos = code.rfind("int main()")
-            if main_pos != -1:
-                code = code[:main_pos]
+            if "\nint main()" in code:
+                code = code[:code.rfind("\nint main()")]
             close_brace_pos = code.rfind('}')
             if close_brace_pos != -1:
                 code = code[:close_brace_pos] + '}'
