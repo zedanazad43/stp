@@ -1,5 +1,7 @@
 # Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
 
+> **🌐 Live Demo**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
 > **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
@@ -143,6 +145,22 @@ npm run start
 npm test
 npm run lint
 ```
+
+---
+
+## النشر / Deployment / Bereitstellung
+
+### العربية 🇸🇦
+- **الموقع المباشر**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **دليل النشر الكامل**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### English 🇬🇧
+- **Live Site**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **Full Deployment Guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### Deutsch 🇩🇪
+- **Live-Website**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **Vollständige Bereitstellungsanleitung**: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ---
 
