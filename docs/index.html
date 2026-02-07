@@ -280,12 +280,20 @@
     </div>
 
     <script>
-        // Load translations from locale files
+        // Load translations from API server or locale files
         let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+        const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:8080' 
+            : '';
         
         async function loadTranslations(lang) {
             try {
-                const response = await fetch(`../locales/${lang}.json`);
+                // Try loading from API first
+                let response = await fetch(`${API_BASE}/api/locale/${lang}`);
+                if (!response.ok) {
+                    // Fallback to local files
+                    response = await fetch(`../locales/${lang}.json`);
+                }
                 const translations = await response.json();
                 return translations;
             } catch (error) {
