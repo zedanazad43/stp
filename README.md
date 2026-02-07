@@ -162,6 +162,25 @@ npm run lint
 
 ---
 
+## التوثيق الكامل / Complete Documentation / Vollständige Dokumentation
+
+### العربية 🇸🇦
+للحصول على وثائق شاملة ومنظمة، قم بزيارة:
+- 🌐 **[بوابة التوثيق](https://zedanazad43.github.io/stp/)** - الوثائق الكاملة عبر الإنترنت
+- 📁 **[مجلد docs](docs/)** - جميع ملفات الوثائق
+
+### English 🇬🇧
+For comprehensive and organized documentation, visit:
+- 🌐 **[Documentation Portal](https://zedanazad43.github.io/stp/)** - Full documentation online
+- 📁 **[docs folder](docs/)** - All documentation files
+
+### Deutsch 🇩🇪
+Für umfassende und organisierte Dokumentation, besuchen Sie:
+- 🌐 **[Dokumentationsportal](https://zedanazad43.github.io/stp/)** - Vollständige Dokumentation online
+- 📁 **[docs Ordner](docs/)** - Alle Dokumentationsdateien
+
+---
+
 ### Contributions
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
