@@ -72,6 +72,10 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
 ## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung
 
+📚 **للحصول على دليل نشر شامل، انظر [DEPLOYMENT.md](DEPLOYMENT.md)**  
+📚 **For comprehensive deployment guide, see [DEPLOYMENT.md](DEPLOYMENT.md)**  
+📚 **Für eine umfassende Bereitstellungsanleitung siehe [DEPLOYMENT.md](DEPLOYMENT.md)**
+
 ### العربية 🇸🇦
 #### المتطلبات الأساسية
 - Node.js >= 16.x
