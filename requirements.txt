@@ -5,10 +5,5 @@
 numpy>=1.21.0
 torch>=1.9.0
 
-# Optional utilities (used in utils.py)
-# These are imported but may not be critical for all use cases
-# Uncomment if needed:
-# gzip - part of Python standard library
-# json - part of Python standard library
-# logging - part of Python standard library
-# itertools - part of Python standard library
+# Note: utils.py also uses standard library modules (gzip, json, logging, itertools)
+# which are included with Python and require no installation
