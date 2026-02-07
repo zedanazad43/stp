@@ -49,7 +49,7 @@ function addMarketItem(sellerId, item) {
   }
 
   const newItem = {
-    id: `item_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    id: `item_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`,
     sellerId,
     name: item.name,
     description: item.description || "",
@@ -141,7 +141,7 @@ function purchaseMarketItem(itemId, buyerId) {
 
   // Record transaction
   const transaction = {
-    id: `txn_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    id: `txn_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`,
     itemId,
     sellerId: item.sellerId,
     buyerId,
