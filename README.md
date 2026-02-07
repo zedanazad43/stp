@@ -75,7 +75,7 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 ### العربية 🇸🇦
 #### المتطلبات الأساسية
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.9
 - Git
 
 #### بدء التطوير
@@ -99,7 +99,7 @@ npm run lint
 ### English 🇬🇧
 #### Prerequisites
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.9
 - Git
 
 #### Development
@@ -123,7 +123,7 @@ npm run lint
 ### Deutsch 🇩🇪
 #### Voraussetzungen
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.9
 - Git
 
 #### Entwicklung

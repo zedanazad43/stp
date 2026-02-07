@@ -1,7 +1,7 @@
 # Installation
 
 ## Deutsch 🇩🇪
-1. Stelle sicher, dass Python und ggf. Node.js installiert sind.
+1. Stelle sicher, dass Python (>= 3.9) und ggf. Node.js (>= 16.x) installiert sind.
 2. Klone das Repository:
    ```
    git clone https://github.com/stampcoin-platform/stampcoin-platform.git
@@ -15,7 +15,7 @@
 4. Starte die Anwendung laut [README.md](README.md).
 
 ## English 🇬🇧
-1. Make sure you have Python and optionally Node.js installed.
+1. Make sure you have Python (>= 3.9) and optionally Node.js (>= 16.x) installed.
 2. Clone the repository:
    ```
    git clone https://github.com/stampcoin-platform/stampcoin-platform.git

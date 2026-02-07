@@ -123,7 +123,7 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 ## Technical Stack
 - **Languages**: Python, TypeScript, JavaScript, Shell Script, PowerShell
 - **Runtime**: Node.js >= 16.x
-- **Python**: >= 3.8
+- **Python**: >= 3.9
 - **Database**: Prisma ORM
 - **Testing**: Jest
 - **Deployment**: Docker, Fly.io, GitHub Container Registry
