@@ -388,6 +388,11 @@ curl -X POST http://localhost:8080/api/wallets/transfer \
 4. Implement rate limiting
 5. Add transaction signatures for enhanced security
 
+**Concurrency Note**: The current implementation uses file-based storage without locking mechanisms. For production use with concurrent access, consider:
+- Implementing file locking (e.g., using `proper-lockfile` npm package)
+- Migrating to a database with transaction support (PostgreSQL, MongoDB, etc.)
+- Using a queue system for wallet operations to serialize transactions
+
 ## Future Enhancements | التحسينات المستقبلية
 
 - Add wallet authentication with JWT tokens

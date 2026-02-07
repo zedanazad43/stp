@@ -28,8 +28,13 @@ function readWallets() {
     const data = fs.readFileSync(WALLETS_FILE, 'utf8');
     return JSON.parse(data);
   } catch (error) {
+    // Only return empty object if file doesn't exist
+    if (error.code === 'ENOENT') {
+      return {};
+    }
+    // Re-throw other errors (invalid JSON, permissions, etc.)
     console.error('Error reading wallets:', error.message);
-    return {};
+    throw error;
   }
 }
 
@@ -54,8 +59,13 @@ function readTransactions() {
     const data = fs.readFileSync(TRANSACTIONS_FILE, 'utf8');
     return JSON.parse(data);
   } catch (error) {
+    // Only return empty array if file doesn't exist
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    // Re-throw other errors (invalid JSON, permissions, etc.)
     console.error('Error reading transactions:', error.message);
-    return [];
+    throw error;
   }
 }
 
@@ -179,11 +189,16 @@ function addStamp(userId, stamp) {
  * Transfer stamps or balance between wallets
  * @param {string} fromUserId - Sender's user ID
  * @param {string} toUserId - Receiver's user ID
- * @param {number} amount - Amount to transfer (optional)
+ * @param {number} amount - Amount to transfer (must be positive if transferring balance)
  * @param {string} stampId - Stamp ID to transfer (optional)
  * @returns {object} Transaction record
  */
 function transfer(fromUserId, toUserId, amount = 0, stampId = null) {
+  // Validate that either amount or stampId is provided
+  if (!stampId && (!amount || amount <= 0)) {
+    throw new Error('Transfer amount must be a positive number when transferring balance');
+  }
+  
   const wallets = readWallets();
   const fromWallet = wallets[fromUserId];
   const toWallet = wallets[toUserId];

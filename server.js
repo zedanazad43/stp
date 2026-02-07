@@ -105,8 +105,8 @@ app.post("/api/wallets/:userId/balance", (req, res) => {
   try {
     const { userId } = req.params;
     const { amount } = req.body;
-    if (typeof amount !== 'number') {
-      return res.status(400).json({ error: "amount must be a number" });
+    if (!Number.isFinite(amount)) {
+      return res.status(400).json({ error: "amount must be a finite number" });
     }
     const updatedWallet = wallet.updateBalance(userId, amount);
     res.json(updatedWallet);
@@ -139,6 +139,9 @@ app.post("/api/wallets/transfer", (req, res) => {
     }
     if (!amount && !stampId) {
       return res.status(400).json({ error: "Either amount or stampId must be provided" });
+    }
+    if (amount && (!Number.isFinite(amount) || amount <= 0)) {
+      return res.status(400).json({ error: "amount must be a positive finite number" });
     }
     const transaction = wallet.transfer(fromUserId, toUserId, amount, stampId);
     res.json(transaction);
