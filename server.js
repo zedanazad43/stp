@@ -9,6 +9,10 @@ app.use(express.json());
 
 const DATA_FILE = path.join(__dirname, "data.json");
 const SYNC_TOKEN = process.env.SYNC_TOKEN || "";
+const LOCALES_DIR = path.join(__dirname, "locales");
+
+// Supported languages
+const SUPPORTED_LANGUAGES = ["en", "de", "ar", "zh", "fr", "es"];
 
 function readData() {
   try {
@@ -43,6 +47,27 @@ function requireToken(req, res, next) {
   }
   next();
 }
+
+// Language API endpoints
+app.get("/api/languages", (req, res) => {
+  res.json({ languages: SUPPORTED_LANGUAGES });
+});
+
+app.get("/api/locale/:lang", (req, res) => {
+  const lang = req.params.lang;
+  if (!SUPPORTED_LANGUAGES.includes(lang)) {
+    return res.status(404).json({ error: "Language not supported" });
+  }
+  
+  const localePath = path.join(LOCALES_DIR, `${lang}.json`);
+  try {
+    const localeData = fs.readFileSync(localePath, "utf8");
+    res.json(JSON.parse(localeData));
+  } catch (e) {
+    console.error(`Error loading locale ${lang}:`, e.message);
+    res.status(500).json({ error: "Failed to load language file" });
+  }
+});
 
 app.get("/sync", requireToken, (req, res) => {
   const todos = readData();
