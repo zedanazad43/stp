@@ -135,6 +135,16 @@ function getAllWallets() {
  * @returns {object} Updated wallet
  */
 function updateBalance(userId, amount) {
+  // Prevent prototype-polluting or otherwise invalid user identifiers
+  if (
+    typeof userId !== 'string' ||
+    userId === '__proto__' ||
+    userId === 'constructor' ||
+    userId === 'prototype'
+  ) {
+    throw new Error('Invalid userId');
+  }
+
   const wallets = readWallets();
   const wallet = wallets[userId];
   
