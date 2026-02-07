@@ -206,7 +206,7 @@
     <div class="container">
         <header>
             <h1 id="platformTitle">🎯 Stampcoin Platform</h1>
-            <p class="subtitle" id="platformSubtitle">منصة رقمية | Digital Platform | Digitale Plattform | 数字平台 | Plateforme Numérique | Plataforma Digital</p>
+            <p class="subtitle" id="platformSubtitle">Digital Platform</p>
             <div>
                 <span class="status-badge" id="statusLive">✓ Live</span>
                 <span class="status-badge" id="statusOpenSource">✓ Open Source</span>
@@ -265,7 +265,7 @@
 
         <div class="languages">
             <p><strong id="multilingualTitle">Multilingual Support</strong></p>
-            <p class="lang-flags">🇸🇦 العربية • 🇬🇧 English • 🇩🇪 Deutsch • 🇨🇳 中文 • 🇫🇷 Français • 🇪🇸 Español</p>
+            <p class="lang-flags" id="languageFlags">🇬🇧 English • 🇩🇪 Deutsch • 🇸🇦 العربية • 🇨🇳 中文 • 🇫🇷 Français • 🇪🇸 Español</p>
         </div>
 
         <footer>
@@ -315,6 +315,7 @@
             
             // Update all text elements
             document.getElementById('platformTitle').textContent = `🎯 ${translations.platform.title}`;
+            document.getElementById('platformSubtitle').textContent = translations.platform.subtitle;
             document.getElementById('platformDescription').textContent = translations.platform.description;
             
             // Update status badges
