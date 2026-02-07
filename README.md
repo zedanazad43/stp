@@ -13,7 +13,11 @@
 Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
 
 ### المميزات
-- محفظة طوابع رقمية
+- محفظة طوابع رقمية (Digital Wallet API)
+  - إنشاء وإدارة المحافظ الرقمية
+  - إدارة الأرصدة والطوابع الرقمية
+  - تحويلات آمنة بين المستخدمين (P2P)
+  - سجل المعاملات الكامل
 - تعاملات آمنة بين المستخدمين
 - سوق طوابع رقمية ومقتنيات حديثة
 - إدارة ملفات المستخدم والتحقق
@@ -34,7 +38,11 @@ cd stampcoin-platform
 Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
 
 ### Features
-- Digital stamps wallet
+- Digital stamps wallet with full API
+  - Create and manage digital wallets
+  - Balance and digital stamps management
+  - Secure peer-to-peer transfers
+  - Complete transaction history
 - Secure peer-to-peer transfers
 - Marketplace for digital stamps & collectibles
 - User profile & verification
@@ -149,6 +157,12 @@ npm run start
 npm test
 npm run lint
 ```
+
+### Wallet API | واجهة برمجة المحفظة
+
+For detailed information about the Digital Wallet API endpoints and usage, see [WALLET_API.md](WALLET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
 
 ---
 
