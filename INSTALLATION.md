@@ -1,7 +1,7 @@
 # التثبيت / Installation / Installation
 
 ## العربية 🇸🇦
-1. تأكد من وجود Python وNode.js
+1. تأكد من وجود Python (>= 3.9) وNode.js (>= 16.x)
 2. استنسخ المشروع:
    ```
    git clone https://github.com/stampcoin-platform/stampcoin-platform.git
@@ -14,7 +14,7 @@
    ```
 
 ## English 🇬🇧
-1. Ensure Python & Node.js are installed.
+1. Ensure Python (>= 3.9) & Node.js (>= 16.x) are installed.
 2. Clone:
    ```
    git clone https://github.com/stampcoin-platform/stampcoin-platform.git
@@ -27,7 +27,7 @@
    ```
 
 ## Deutsch 🇩🇪
-1. Sorge dafür, dass Python & Node.js installiert sind.
+1. Sorge dafür, dass Python (>= 3.9) & Node.js (>= 16.x) installiert sind.
 2. Klonen:
    ```
    git clone https://github.com/stampcoin-platform/stampcoin-platform.git
