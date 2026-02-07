@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const wallet = require("./wallet");
+const market = require("./market");
 
 const app = express();
 app.use(cors());
@@ -174,8 +175,100 @@ app.get("/api/transactions", (req, res) => {
   }
 });
 
+// Market Institution API Endpoints (مؤسسة السوق)
+
+// Get all market items
+app.get("/api/market/items", (req, res) => {
+  try {
+    const { status, type, sellerId } = req.query;
+    const items = market.getAllMarketItems({ status, type, sellerId });
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get a specific market item
+app.get("/api/market/items/:itemId", (req, res) => {
+  try {
+    const { itemId } = req.params;
+    const item = market.getMarketItem(itemId);
+    res.json(item);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+});
+
+// Add a new item to the market
+app.post("/api/market/items", (req, res) => {
+  try {
+    const { sellerId, item } = req.body;
+    if (!sellerId || !item) {
+      return res.status(400).json({ error: "sellerId and item are required" });
+    }
+    const newItem = market.addMarketItem(sellerId, item);
+    res.status(201).json(newItem);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Update a market item
+app.put("/api/market/items/:itemId", (req, res) => {
+  try {
+    const { itemId } = req.params;
+    const updates = req.body;
+    const updatedItem = market.updateMarketItem(itemId, updates);
+    res.json(updatedItem);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Purchase a market item
+app.post("/api/market/items/:itemId/purchase", (req, res) => {
+  try {
+    const { itemId } = req.params;
+    const { buyerId } = req.body;
+    if (!buyerId) {
+      return res.status(400).json({ error: "buyerId is required" });
+    }
+    const result = market.purchaseMarketItem(itemId, buyerId);
+    res.json(result);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Remove a market item
+app.delete("/api/market/items/:itemId", (req, res) => {
+  try {
+    const { itemId } = req.params;
+    const { userId } = req.body;
+    if (!userId) {
+      return res.status(400).json({ error: "userId is required" });
+    }
+    const result = market.removeMarketItem(itemId, userId);
+    res.json(result);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Get market transaction history
+app.get("/api/market/transactions", (req, res) => {
+  try {
+    const { buyerId, sellerId } = req.query;
+    const transactions = market.getMarketTransactions({ buyerId, sellerId });
+    res.json(transactions);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Stampcoin Platform server listening on port ${port}`);
   console.log(`Digital Wallet API available at http://localhost:${port}/api/wallets`);
+  console.log(`Market Institution API available at http://localhost:${port}/api/market`);
 });

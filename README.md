@@ -164,6 +164,12 @@ For detailed information about the Digital Wallet API endpoints and usage, see [
 
 للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
 
+### Market Institution API | واجهة برمجة مؤسسة السوق
+
+For detailed information about the Market Institution API endpoints and usage, see [MARKET_API.md](MARKET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات مؤسسة السوق واستخدامها، راجع [MARKET_API.md](MARKET_API.md).
+
 ---
 
 ## الأمان / Security / Sicherheit
