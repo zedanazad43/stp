@@ -75,8 +75,10 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 ### العربية 🇸🇦
 #### المتطلبات الأساسية
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.8 (يُوصى بـ 3.14.3)
 - Git
+
+**ملاحظة لمستخدمي Windows**: راجع [WINDOWS_SETUP.md](WINDOWS_SETUP.md) للحصول على تعليمات مفصلة باستخدام Chocolatey.
 
 #### بدء التطوير
 ```bash
@@ -99,8 +101,10 @@ npm run lint
 ### English 🇬🇧
 #### Prerequisites
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.8 (3.14.3 recommended)
 - Git
+
+**Windows Users**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed setup instructions using Chocolatey.
 
 #### Development
 ```bash
@@ -123,8 +127,10 @@ npm run lint
 ### Deutsch 🇩🇪
 #### Voraussetzungen
 - Node.js >= 16.x
-- Python >= 3.8
+- Python >= 3.8 (3.14.3 empfohlen)
 - Git
+
+**Windows-Benutzer**: Siehe [WINDOWS_SETUP.md](WINDOWS_SETUP.md) für detaillierte Anweisungen mit Chocolatey.
 
 #### Entwicklung
 ```bash
