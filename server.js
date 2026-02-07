@@ -119,6 +119,9 @@ app.post("/api/wallets/:userId/balance", (req, res) => {
 app.post("/api/wallets/:userId/stamps", (req, res) => {
   try {
     const { userId } = req.params;
+    if (userId === "__proto__" || userId === "constructor" || userId === "prototype") {
+      return res.status(400).json({ error: "Invalid userId" });
+    }
     const stamp = req.body;
     if (!stamp || !stamp.name) {
       return res.status(400).json({ error: "Stamp data with name is required" });
