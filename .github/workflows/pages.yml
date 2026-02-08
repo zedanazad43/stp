@@ -1,3 +1,5 @@
+# This is the main and only workflow for deploying to GitHub Pages
+# It builds a simple static site in _site/ directory and deploys it
 name: Deploy to GitHub Pages
 
 on:
