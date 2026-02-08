@@ -198,9 +198,44 @@ For detailed information about the Market Institution API endpoints and usage, s
 
 ---
 
-### Contributions
+## المساهمة / Contributing / Beitragen
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+### العربية 🇸🇦
+نرحب بالمساهمات! يرجى مراجعة:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - دليل المساهمة
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - إعدادات المستودع
+
+### English 🇬🇧
+Contributions are welcome! Please review:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository settings guide
+
+### Deutsch 🇩🇪
+Beiträge sind willkommen! Bitte prüfen Sie:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Beitragsrichtlinien
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository-Einstellungen
+
+### 📋 Quick Start for Contributors
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and commit: `git commit -m 'feat: Add amazing feature'`
+4. **Push to your branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+> **Note**: Direct pushes to `main` are protected. All changes must go through pull requests.
+
+---
+
+## 📚 Documentation / التوثيق / Dokumentation
+
+- [INSTALLATION.md](INSTALLATION.md) - Installation guide / دليل التثبيت
+- [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute / كيفية المساهمة
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository settings / إعدادات المستودع
+- [SECURITY.md](SECURITY.md) - Security policy / سياسة الأمان
+- [WORKFLOW_FIXES_SUMMARY.md](WORKFLOW_FIXES_SUMMARY.md) - CI/CD workflow information
+
+---
 
 ### License
 
