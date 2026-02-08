@@ -21,6 +21,30 @@
             margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .language-selector select {
+            padding: 8px 15px;
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1em;
+            outline: none;
+        }
+        .language-selector select:hover {
+            background: #f8f9fa;
+        }
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -140,6 +164,10 @@
             text-align: center;
             color: #888;
         }
+        .lang-flags {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
         footer {
             margin-top: 40px;
             padding-top: 30px;
@@ -164,17 +192,28 @@
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+            <option value="en">🇬🇧 English</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="es">🇪🇸 Español</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
-            <h1>🎯 Stampcoin Platform</h1>
-            <p class="subtitle">منصة رقمية | Digital Platform | Digitale Plattform</p>
+            <h1 id="platformTitle">🎯 Stampcoin Platform</h1>
+            <p class="subtitle" id="platformSubtitle">Digital Platform</p>
             <div>
-                <span class="status-badge">✓ Live</span>
-                <span class="status-badge">✓ Open Source</span>
+                <span class="status-badge" id="statusLive">✓ Live</span>
+                <span class="status-badge" id="statusOpenSource">✓ Open Source</span>
             </div>
         </header>
         
-        <p class="description">
+        <p class="description" id="platformDescription">
             An innovative blockchain-based platform for digital stamps, rewards, and loyalty tokens.
             Secure peer-to-peer transfers and a marketplace for digital collectibles powered by 
             transparency and community trust.
@@ -182,62 +221,144 @@
 
         <div class="features">
             <div class="feature">
-                <h3>💳 Digital Wallet</h3>
-                <p>Secure storage and management of your digital stamps and tokens with blockchain technology</p>
+                <h3 id="featureWalletTitle">💳 Digital Wallet</h3>
+                <p id="featureWalletDesc">Secure storage and management of your digital stamps and tokens with blockchain technology</p>
             </div>
             <div class="feature">
-                <h3>🔒 Secure Transfers</h3>
-                <p>Blockchain-powered peer-to-peer transactions with complete transparency and security</p>
+                <h3 id="featureTransfersTitle">🔒 Secure Transfers</h3>
+                <p id="featureTransfersDesc">Blockchain-powered peer-to-peer transactions with complete transparency and security</p>
             </div>
             <div class="feature">
-                <h3>🛍️ Marketplace</h3>
-                <p>Buy, sell, and trade digital collectibles in a trusted community marketplace</p>
+                <h3 id="featureMarketplaceTitle">🛍️ Marketplace</h3>
+                <p id="featureMarketplaceDesc">Buy, sell, and trade digital collectibles in a trusted community marketplace</p>
             </div>
             <div class="feature">
-                <h3>👤 User Profiles</h3>
-                <p>Verified accounts with complete profile management and collection tracking</p>
+                <h3 id="featureProfilesTitle">👤 User Profiles</h3>
+                <p id="featureProfilesDesc">Verified accounts with complete profile management and collection tracking</p>
             </div>
         </div>
 
         <div class="documentation">
-            <h2>📚 Documentation</h2>
+            <h2 id="docTitle">📚 Documentation</h2>
             <div class="doc-links">
                 <a href="business-onepager_Version6.md" class="doc-link">
                     <span class="doc-link-icon">📄</span>
                     <div>
-                        <div class="doc-link-title">Business One-Pager</div>
-                        <div class="doc-link-desc">Complete business plan in Arabic, English, and German</div>
+                        <div class="doc-link-title" id="docBusinessTitle">Business One-Pager</div>
+                        <div class="doc-link-desc" id="docBusinessDesc">Complete business plan in multiple languages</div>
                     </div>
                 </a>
                 <a href="roadmap.md" class="doc-link">
                     <span class="doc-link-icon">🗺️</span>
                     <div>
-                        <div class="doc-link-title">Project Roadmap</div>
-                        <div class="doc-link-desc">Development timeline and milestones</div>
+                        <div class="doc-link-title" id="docRoadmapTitle">Project Roadmap</div>
+                        <div class="doc-link-desc" id="docRoadmapDesc">Development timeline and milestones</div>
                     </div>
                 </a>
             </div>
         </div>
 
         <div class="cta-section">
-            <a href="https://github.com/zedanazad43/stp" class="cta-button">📦 View on GitHub</a>
-            <a href="https://github.com/zedanazad43/stp/issues" class="cta-button">💡 Report Issues</a>
+            <a href="https://github.com/zedanazad43/stp" class="cta-button" id="ctaGithub">📦 View on GitHub</a>
+            <a href="https://github.com/zedanazad43/stp/issues" class="cta-button" id="ctaIssues">💡 Report Issues</a>
         </div>
 
         <div class="languages">
-            <p><strong>Multilingual Support</strong></p>
-            <p>🇸🇦 العربية • 🇬🇧 English • 🇩🇪 Deutsch</p>
+            <p><strong id="multilingualTitle">Multilingual Support</strong></p>
+            <p class="lang-flags" id="languageFlags">🇬🇧 English • 🇩🇪 Deutsch • 🇸🇦 العربية • 🇨🇳 中文 • 🇫🇷 Français • 🇪🇸 Español</p>
         </div>
 
         <footer>
-            <p><strong>Contact:</strong></p>
-            <p>Azad Zedan - Founder of Stampcoin</p>
+            <p><strong id="footerContact">Contact:</strong></p>
+            <p id="footerFounder">Azad Zedan - Founder of Stampcoin</p>
             <p>Email: <a href="mailto:stampcoin.contact@gmail.com">stampcoin.contact@gmail.com</a></p>
             <p>WhatsApp/Telegram: +49 1521 6933122</p>
-            <p style="margin-top: 20px; font-size: 0.9em;">
+            <p style="margin-top: 20px; font-size: 0.9em;" id="footerCopyright">
                 © 2024-2026 Stampcoin Platform. Built with ❤️ for collectors worldwide.
             </p>
         </footer>
     </div>
+
+    <script>
+        // Load translations from API server or locale files
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+        const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:8080' 
+            : '';
+        
+        async function loadTranslations(lang) {
+            try {
+                // Try loading from API first
+                let response = await fetch(`${API_BASE}/api/locale/${lang}`);
+                if (!response.ok) {
+                    // Fallback to local files
+                    response = await fetch(`../locales/${lang}.json`);
+                }
+                const translations = await response.json();
+                return translations;
+            } catch (error) {
+                console.error('Error loading translations:', error);
+                // Fallback to English if load fails
+                if (lang !== 'en') {
+                    return await loadTranslations('en');
+                }
+                return null;
+            }
+        }
+
+        async function changeLanguage(lang) {
+            const translations = await loadTranslations(lang);
+            if (!translations) return;
+
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Update all text elements
+            document.getElementById('platformTitle').textContent = `🎯 ${translations.platform.title}`;
+            document.getElementById('platformSubtitle').textContent = translations.platform.subtitle;
+            document.getElementById('platformDescription').textContent = translations.platform.description;
+            
+            // Update status badges
+            document.getElementById('statusLive').textContent = `✓ ${translations.platform.status.live}`;
+            document.getElementById('statusOpenSource').textContent = `✓ ${translations.platform.status.openSource}`;
+            
+            // Update features
+            document.getElementById('featureWalletTitle').textContent = `💳 ${translations.features.wallet.title}`;
+            document.getElementById('featureWalletDesc').textContent = translations.features.wallet.description;
+            document.getElementById('featureTransfersTitle').textContent = `🔒 ${translations.features.transfers.title}`;
+            document.getElementById('featureTransfersDesc').textContent = translations.features.transfers.description;
+            document.getElementById('featureMarketplaceTitle').textContent = `🛍️ ${translations.features.marketplace.title}`;
+            document.getElementById('featureMarketplaceDesc').textContent = translations.features.marketplace.description;
+            document.getElementById('featureProfilesTitle').textContent = `👤 ${translations.features.profiles.title}`;
+            document.getElementById('featureProfilesDesc').textContent = translations.features.profiles.description;
+            
+            // Update documentation section
+            document.getElementById('docTitle').textContent = `📚 ${translations.documentation.title}`;
+            document.getElementById('docBusinessTitle').textContent = translations.documentation.businessPlan.title;
+            document.getElementById('docBusinessDesc').textContent = translations.documentation.businessPlan.description;
+            document.getElementById('docRoadmapTitle').textContent = translations.documentation.roadmap.title;
+            document.getElementById('docRoadmapDesc').textContent = translations.documentation.roadmap.description;
+            
+            // Update CTA buttons
+            document.getElementById('ctaGithub').textContent = `📦 ${translations.cta.viewGitHub}`;
+            document.getElementById('ctaIssues').textContent = `💡 ${translations.cta.reportIssues}`;
+            
+            // Update footer
+            document.getElementById('multilingualTitle').textContent = translations.footer.multilingual;
+            document.getElementById('footerContact').textContent = translations.footer.contact;
+            document.getElementById('footerFounder').textContent = translations.footer.founder;
+            document.getElementById('footerCopyright').textContent = `© 2024-2026 ${translations.footer.copyright}`;
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            currentLang = lang;
+        }
+
+        // Initialize with saved language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langSelect').value = currentLang;
+            changeLanguage(currentLang);
+        });
+    </script>
 </body>
 </html>

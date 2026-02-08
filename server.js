@@ -11,6 +11,41 @@ app.use(express.json());
 
 const DATA_FILE = path.join(__dirname, "data.json");
 const SYNC_TOKEN = process.env.SYNC_TOKEN || "";
+const LOCALES_DIR = path.join(__dirname, "locales");
+
+// Supported languages
+const SUPPORTED_LANGUAGES = ["en", "de", "ar", "zh", "fr", "es"];
+
+// Simple in-memory rate limiting for locale endpoint
+const localeRequestCache = new Map();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 60; // 60 requests per minute per IP
+
+function rateLimitLocale(req, res, next) {
+  const clientIp = req.ip || req.connection.remoteAddress;
+  const now = Date.now();
+  
+  if (!localeRequestCache.has(clientIp)) {
+    localeRequestCache.set(clientIp, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return next();
+  }
+  
+  const clientData = localeRequestCache.get(clientIp);
+  
+  if (now > clientData.resetTime) {
+    // Reset the counter after the time window
+    clientData.count = 1;
+    clientData.resetTime = now + RATE_LIMIT_WINDOW;
+    return next();
+  }
+  
+  if (clientData.count >= MAX_REQUESTS_PER_WINDOW) {
+    return res.status(429).json({ error: "Too many requests, please try again later" });
+  }
+  
+  clientData.count++;
+  next();
+}
 
 function readData() {
   try {
@@ -45,6 +80,27 @@ function requireToken(req, res, next) {
   }
   next();
 }
+
+// Language API endpoints
+app.get("/api/languages", (req, res) => {
+  res.json({ languages: SUPPORTED_LANGUAGES });
+});
+
+app.get("/api/locale/:lang", rateLimitLocale, (req, res) => {
+  const lang = req.params.lang;
+  if (!SUPPORTED_LANGUAGES.includes(lang)) {
+    return res.status(404).json({ error: "Language not supported" });
+  }
+  
+  const localePath = path.join(LOCALES_DIR, `${lang}.json`);
+  try {
+    const localeData = fs.readFileSync(localePath, "utf8");
+    res.json(JSON.parse(localeData));
+  } catch (e) {
+    console.error(`Error loading locale ${lang}:`, e);
+    res.status(500).json({ error: "Failed to load language file" });
+  }
+});
 
 app.get("/sync", requireToken, (req, res) => {
   const todos = readData();
