@@ -18,10 +18,18 @@ Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا 
   - إدارة الأرصدة والطوابع الرقمية
   - تحويلات آمنة بين المستخدمين (P2P)
   - سجل المعاملات الكامل
+- **مؤسسة السوق (Market Institution API) - جديد!**
+  - إضافة وإدارة عناصر السوق
+  - شراء وبيع الطوابع الرقمية
+  - سجل المعاملات التجارية
+  - تكامل كامل مع المحافظ الرقمية
 - تعاملات آمنة بين المستخدمين
 - سوق طوابع رقمية ومقتنيات حديثة
 - إدارة ملفات المستخدم والتحقق
 - تكامل API وخدمات إضافية
+
+### البدء السريع
+راجع [دليل البدء السريع](QUICKSTART.md) للبدء بسرعة!
 
 ### الإنطلاق
 ```
@@ -43,10 +51,18 @@ Stampcoin is an innovative platform for digital currency based on blockchain tec
   - Balance and digital stamps management
   - Secure peer-to-peer transfers
   - Complete transaction history
+- **Market Institution API - New!**
+  - Add and manage market items
+  - Buy and sell digital stamps
+  - Commercial transaction history
+  - Full integration with digital wallets
 - Secure peer-to-peer transfers
 - Marketplace for digital stamps & collectibles
 - User profile & verification
 - API integration
+
+### Quick Start
+See the [Quick Start Guide](QUICKSTART.md) to get started quickly!
 
 ### Start
 ```
@@ -163,6 +179,12 @@ npm run lint
 For detailed information about the Digital Wallet API endpoints and usage, see [WALLET_API.md](WALLET_API.md).
 
 للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
+
+### Market Institution API | واجهة برمجة مؤسسة السوق
+
+For detailed information about the Market Institution API endpoints and usage, see [MARKET_API.md](MARKET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات مؤسسة السوق واستخدامها، راجع [MARKET_API.md](MARKET_API.md).
 
 ---
 
