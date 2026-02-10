@@ -1,5 +1,5 @@
 const express = require("express");
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 const cors = require("cors");
 
@@ -10,17 +10,17 @@ app.use(express.json());
 const DATA_FILE = path.join(__dirname, "data.json");
 const SYNC_TOKEN = process.env.SYNC_TOKEN || "";
 
-function readData() {
+async function readData() {
   try {
-    const raw = fs.readFileSync(DATA_FILE, "utf8");
+    const raw = await fs.readFile(DATA_FILE, "utf8");
     return JSON.parse(raw);
   } catch (e) {
     return [];
   }
 }
-function writeData(todos) {
+async function writeData(todos) {
   try {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(todos, null, 2), "utf8");
+    await fs.writeFile(DATA_FILE, JSON.stringify(todos, null, 2), "utf8");
     return true;
   } catch (e) {
     console.error("Write error:", e);
@@ -37,17 +37,17 @@ function requireToken(req, res, next) {
   next();
 }
 
-app.get("/sync", requireToken, (req, res) => {
-  const todos = readData();
+app.get("/sync", requireToken, async (req, res) => {
+  const todos = await readData();
   res.json({ todos });
 });
 
-app.post("/sync", requireToken, (req, res) => {
+app.post("/sync", requireToken, async (req, res) => {
   const payload = req.body;
   if (!payload || !Array.isArray(payload.todos)) {
     return res.status(400).json({ error: "Invalid payload, expected { todos: [...] }" });
   }
-  const ok = writeData(payload.todos);
+  const ok = await writeData(payload.todos);
   if (!ok) return res.status(500).json({ error: "Failed to store data" });
   res.json({ ok: true });
 });

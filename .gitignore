@@ -35,7 +35,12 @@ temp/
 /tmp/
 *.tmp
 
-# Lock files (optional - uncomment if needed)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data files
+data.json

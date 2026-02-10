@@ -184,26 +184,31 @@ def stream_jsonl(filename: str) -> Iterable[Dict]:
         with open(filename, "rb") as gzfp:
             with gzip.open(gzfp, "rt") as fp:
                 for line in fp:
-                    if any(not x.isspace() for x in line):
+                    if line.strip():
                         yield json.loads(line)
     else:
         with open(filename, "r") as fp:
             for line in fp:
-                if any(not x.isspace() for x in line):
+                if line.strip():
                     yield json.loads(line)
                     
 
-def stream_jsonl_all(filename: str) -> Iterable[Dict]:
+def stream_jsonl_all(filename: str) -> List[Dict]:
+    """
+    Loads all jsonl lines into a list
+    """
     results = []
     if filename.endswith(".gz"):
-        fp = gzip.open(open(filename, "rb"), "rt")
+        with open(filename, "rb") as gzfp:
+            with gzip.open(gzfp, "rt") as fp:
+                for line in fp:
+                    if line.strip():
+                        results.append(json.loads(line))
     else:
-        fp = open(filename, "r")
-    for line in fp:
-        if any(not x.isspace() for x in line):
-            results.append(json.loads(line))
-    fp.close()
-
+        with open(filename, "r") as fp:
+            for line in fp:
+                if line.strip():
+                    results.append(json.loads(line))
     return results
 
 
@@ -230,8 +235,8 @@ def read_dataset(
         ds1000 = DS1000Dataset(source_dir=data_file, libs="all", mode="Completion")
         for lib in ds1000.libs:
             for problem_id in range(len(ds1000[lib])):
-                prefix = ""
-                suffix = ""
+                prefix_lines = []
+                suffix_lines = []
                 insert_flag = False
                 first_line_flag = True
                 # extract prefix and suffix of the prompt
@@ -241,12 +246,17 @@ def read_dataset(
                         continue
                     if first_line_flag:
                         first_line_flag = False
+                        if not insert_flag:
+                            prefix_lines.append(line)
+                        else:
+                            suffix_lines.append(line)
                     else:
-                        line = "\n" + line
-                    if not insert_flag:
-                        prefix += line
-                    else:
-                        suffix += line
+                        if not insert_flag:
+                            prefix_lines.append("\n" + line)
+                        else:
+                            suffix_lines.append("\n" + line)
+                prefix = "".join(prefix_lines)
+                suffix = "".join(suffix_lines)
             
     else:
         raise ValueError(f"Dataset: {dataset_type} not supported.")
@@ -338,26 +348,21 @@ def is_code_generation_finished(
             for w in end_words:
                 if w in code:
                     return True
-        elif language_type.lower() == "java":
-            if code.count("{") + 1 == code.count("}"):
+        elif language_type.lower() in ("java", "go", "js", "cpp", "rust"):
+            # Cache brace counts to avoid multiple string scans
+            open_braces = code.count("{")
+            close_braces = code.count("}")
+            
+            # Check for main functions first
+            if language_type.lower() == "go" and "\nfunc main(" in code:
                 return True
-        elif language_type.lower() == "go":
-            if "\nfunc main(" in code:
+            elif language_type.lower() == "cpp" and "\nint main()" in code:
                 return True
-            if code.count("{") + 1 == code.count("}"):
+            elif language_type.lower() == "rust" and "\nfn main()" in code:
                 return True
-        elif language_type.lower() == "js":
-            if code.count("{") + 1 == code.count("}"):
-                return True
-        elif language_type.lower() == "cpp":
-            if "\nint main()" in code:
-                return True
-            if code.count("{") + 1 == code.count("}"):
-                return True
-        elif language_type.lower() == "rust":
-            if "\nfn main()" in code:
-                return True
-            if code.count("{") + 1 == code.count("}"):
+            
+            # Check brace balance
+            if open_braces + 1 == close_braces:
                 return True
 
     return False
@@ -385,7 +390,8 @@ def cleanup_code(
                 if code.count(w) > 1:
                     code = code[:code.rfind(w)]
             else:
-                code = code[:code.rfind(w)]
+                if w in code:  # Only call rfind if w exists
+                    code = code[:code.rfind(w)]
         code = first_block(code, stop_words)
     elif dataset_type == "humanevalx":
         if language_type.lower() == "python":
@@ -408,26 +414,34 @@ def cleanup_code(
             main_pos = code.find("public static void main")
             if main_pos != -1:
                 code = code[:main_pos] + '}'
-            if '}' in code:
-                code = code[:code.rfind('}')] + '}'
-            if code.count('{') + 1 == code.count('}'):
+            # Cache brace counts
+            open_braces = code.count('{')
+            close_braces = code.count('}')
+            close_brace_pos = code.rfind('}')
+            if close_brace_pos != -1:
+                code = code[:close_brace_pos] + '}'
+            if open_braces + 1 == close_braces:
                 code += "\n}"
         elif language_type.lower() == "go":
             if "\nfunc main(" in code:
-                code = code[:code.rfind("func main(")]
-            if '}' in code:
-                code = code[:code.rfind('}')] + '}'
+                code = code[:code.rfind("\nfunc main(")]
+            close_brace_pos = code.rfind('}')
+            if close_brace_pos != -1:
+                code = code[:close_brace_pos] + '}'
         elif language_type.lower() == "cpp":
             if "\nint main()" in code:
-                code = code[:code.rfind("int main()")]
-            if '}' in code:
-                code = code[:code.rfind('}')] + '}'
+                code = code[:code.rfind("\nint main()")]
+            close_brace_pos = code.rfind('}')
+            if close_brace_pos != -1:
+                code = code[:close_brace_pos] + '}'
         elif language_type.lower() == "js":
-            if '}' in code:
-                code = code[:code.rfind('}')] + '}'
+            close_brace_pos = code.rfind('}')
+            if close_brace_pos != -1:
+                code = code[:close_brace_pos] + '}'
         elif language_type.lower() == "rust":
-            if '}' in code:
-                code = code[:code.rfind('}')] + '}'
+            close_brace_pos = code.rfind('}')
+            if close_brace_pos != -1:
+                code = code[:close_brace_pos] + '}'
 
     return code
 
