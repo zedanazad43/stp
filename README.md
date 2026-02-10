@@ -240,7 +240,26 @@ docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
 # Öffne Browser: http://localhost:8080
 ```
 
-**Usuarios de Windows**: Ver [WINDOWS_SETUP.md](WINDOWS_SETUP.md) para instrucciones detalladas de configuración usando Chocolatey.
+## التوثيق الكامل / Complete Documentation / Vollständige Dokumentation
+
+### العربية 🇸🇦
+للحصول على وثائق شاملة ومنظمة، قم بزيارة:
+- 🌐 **[بوابة التوثيق](https://zedanazad43.github.io/stp/)** - الوثائق الكاملة عبر الإنترنت
+- 📁 **[مجلد docs](docs/)** - جميع ملفات الوثائق
+
+### English 🇬🇧
+For comprehensive and organized documentation, visit:
+- 🌐 **[Documentation Portal](https://zedanazad43.github.io/stp/)** - Full documentation online
+- 📁 **[docs folder](docs/)** - All documentation files
+
+### Deutsch 🇩🇪
+Für umfassende und organisierte Dokumentation, besuchen Sie:
+- 🌐 **[Dokumentationsportal](https://zedanazad43.github.io/stp/)** - Vollständige Dokumentation online
+- 📁 **[docs Ordner](docs/)** - Alle Dokumentationsdateien
+
+---
+
+### Contributions
 
 #### Desarrollo
 ```bash
