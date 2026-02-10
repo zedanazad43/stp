@@ -378,85 +378,44 @@ npm run lint
 
 ---
 
-## 🚀 التكامل المستمر/التسليم المستمر | CI/CD | CI/CD
+## المساهمة / Contributing / Beitragen
 
 ### العربية 🇸🇦
-
-#### خوادم التشغيل المستضافة ذاتيًا (Self-Hosted Runners)
-
-يدعم هذا المستودع تشغيل سير العمل CI/CD على خوادمك الخاصة باستخدام GitHub Actions Self-Hosted Runners.
-
-**المزايا:**
-- 🏢 التحكم الكامل في بيئة التشغيل
-- 💰 توفير التكاليف للمشاريع الكبيرة
-- 🔒 الأمان المحسّن لمتطلبات الامتثال
-- ⚡ أداء أفضل مع الأجهزة المخصصة
-
-**البدء السريع:**
-```bash
-# دليل سريع متاح في
-📄 QUICKSTART_SELF_HOSTED_RUNNER.md
-
-# دليل مفصل متاح في
-📚 SELF_HOSTED_RUNNER_SETUP.md
-```
-
-**سير العمل المتاح:**
-- ✅ `self-hosted-ci.yml` - بناء واختبار تلقائي على خوادمك
+نرحب بالمساهمات! يرجى مراجعة:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - دليل المساهمة
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - إعدادات المستودع
 
 ### English 🇬🇧
-
-#### Self-Hosted Runners
-
-This repository supports running CI/CD workflows on your own infrastructure using GitHub Actions Self-Hosted Runners.
-
-**Benefits:**
-- 🏢 Full control over execution environment
-- 💰 Cost savings for high-volume projects
-- 🔒 Enhanced security for compliance requirements
-- ⚡ Better performance with dedicated hardware
-
-**Quick Start:**
-```bash
-# Quick guide available at
-📄 QUICKSTART_SELF_HOSTED_RUNNER.md
-
-# Detailed guide available at
-📚 SELF_HOSTED_RUNNER_SETUP.md
-```
-
-**Available Workflows:**
-- ✅ `self-hosted-ci.yml` - Automated build and test on your servers
+Contributions are welcome! Please review:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository settings guide
 
 ### Deutsch 🇩🇪
+Beiträge sind willkommen! Bitte prüfen Sie:
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Beitragsrichtlinien
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository-Einstellungen
 
-#### Self-Hosted Runner
+### 📋 Quick Start for Contributors
 
-Dieses Repository unterstützt die Ausführung von CI/CD-Workflows auf Ihrer eigenen Infrastruktur mit GitHub Actions Self-Hosted Runners.
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and commit: `git commit -m 'feat: Add amazing feature'`
+4. **Push to your branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
 
-**Vorteile:**
-- 🏢 Volle Kontrolle über die Ausführungsumgebung
-- 💰 Kosteneinsparungen für umfangreiche Projekte
-- 🔒 Verbesserte Sicherheit für Compliance-Anforderungen
-- ⚡ Bessere Leistung mit dedizierter Hardware
-
-**Schnellstart:**
-```bash
-# Kurzanleitung verfügbar unter
-📄 QUICKSTART_SELF_HOSTED_RUNNER.md
-
-# Detaillierte Anleitung verfügbar unter
-📚 SELF_HOSTED_RUNNER_SETUP.md
-```
-
-**Verfügbare Workflows:**
-- ✅ `self-hosted-ci.yml` - Automatisiertes Bauen und Testen auf Ihren Servern
+> **Note**: Direct pushes to `main` are protected. All changes must go through pull requests.
 
 ---
 
-### Contributions
+## 📚 Documentation / التوثيق / Dokumentation
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+- [INSTALLATION.md](INSTALLATION.md) - Installation guide / دليل التثبيت
+- [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute / كيفية المساهمة
+- [REPOSITORY_SETTINGS.md](REPOSITORY_SETTINGS.md) - Repository settings / إعدادات المستودع
+- [SECURITY.md](SECURITY.md) - Security policy / سياسة الأمان
+- [WORKFLOW_FIXES_SUMMARY.md](WORKFLOW_FIXES_SUMMARY.md) - CI/CD workflow information
+
+---
 
 ### License
 
