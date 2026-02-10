@@ -17,5 +17,14 @@
   },
   "engines": {
     "node": ">=16.x"
-  }
+  },
+  "keywords": [
+    "stampcoin",
+    "blockchain",
+    "digital-stamps",
+    "collectibles",
+    "marketplace"
+  ],
+  "author": "Azad Zedan",
+  "license": "MIT"
 }
