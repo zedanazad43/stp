@@ -6,13 +6,13 @@
 1. تأكد من وجود Python وNode.js
 2. استنسخ المشروع:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. ثبّت المتطلبات:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
 
 ### باستخدام Docker
@@ -39,13 +39,13 @@
 1. Ensure Python & Node.js are installed.
 2. Clone:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. Install:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
 
 ### Using Docker
@@ -72,13 +72,13 @@
 1. Sorge dafür, dass Python & Node.js installiert sind.
 2. Klonen:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. Installieren:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
 
 ### Mit Docker
