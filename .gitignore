@@ -32,10 +32,10 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
-*.tmp
 /tmp/
+*.tmp
 
-# Lock files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Lock files (optional - uncomment if needed)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
