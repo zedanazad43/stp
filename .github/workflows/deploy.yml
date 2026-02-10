@@ -5,29 +5,30 @@ on:
     branches:
       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Node.js
+    - name: Configure Node.js environment
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
 
-    - name: Install dependencies
+    - name: Install project dependencies
       run: npm ci
 
     - name: Generate static website
@@ -36,15 +37,14 @@ jobs:
         mkdir -p public
         bash scripts/generate-landing-page.sh public
 
-    - name: Setup Pages
+    - name: Initialize GitHub Pages
       uses: actions/configure-pages@v4
 
-    - name: Upload artifact
+    - name: Upload deployment artifact
       uses: actions/upload-pages-artifact@v4
       with:
         path: './public'
 
-    - name: Deploy to GitHub Pages
+    - name: Publish to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-        # Add your deployment commands here when ready
