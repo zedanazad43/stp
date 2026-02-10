@@ -81,11 +81,11 @@ See the [Quick Start Guide](QUICKSTART.md) to get started quickly!
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 See [INSTALLATION.md](INSTALLATION.md) for more.
 
-🌐 **[Visit Official Website](https://zedanazad43.github.io/stp/)**
+🌐 **[Visit Website](https://zedanazad43.github.io/stp/)**
 
 ---
 
@@ -106,153 +106,35 @@ Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Brief
 git clone https://github.com/zedanazad43/stp.git
 cd stp
 npm install
-npm run build
+npm start
 ```
 Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
-🌐 **[Offizielle Website besuchen](https://zedanazad43.github.io/stp/)**
+🌐 **[Website besuchen](https://zedanazad43.github.io/stp/)**
 
 ---
 
-## 中文 🇨🇳
+## 📦 Installation
 
-### 描述
-Stampcoin 是一个基于区块链技术的创新平台，专注于数字邮票、奖励和忠诚度代币。
+See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
 
-### 功能特点
-- 数字邮票钱包
-- 安全的点对点转账
-- 数字邮票和收藏品市场
-- 用户资料和验证
-- API 集成
+### Quick Start
 
-### 开始使用
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-更多信息请参见 [INSTALLATION.md](INSTALLATION.md)
-
----
-
-## Français 🇫🇷
-
-### Description
-Stampcoin est une plateforme innovante de monnaie numérique basée sur la technologie blockchain, axée sur les timbres numériques, les récompenses et les jetons de fidélité.
-
-### Fonctionnalités
-- Portefeuille de timbres numériques
-- Transferts peer-to-peer sécurisés
-- Place de marché pour timbres et objets de collection numériques
-- Profil utilisateur et vérification
-- Intégration API
-
-### Démarrer
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Voir [INSTALLATION.md](INSTALLATION.md) pour plus d'informations.
-
----
-
-## Español 🇪🇸
-
-### Descripción
-Stampcoin es una plataforma innovadora de moneda digital basada en tecnología blockchain, enfocada en sellos digitales, recompensas y tokens de lealtad.
-
-### Características
-- Cartera de sellos digitales
-- Transferencias peer-to-peer seguras
-- Mercado de sellos digitales y coleccionables
-- Perfil de usuario y verificación
-- Integración API
-
-### Comenzar
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Ver [INSTALLATION.md](INSTALLATION.md) para más información.
-
----
-
-## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung / 部署和运行 / Déploiement et Exécution / Implementación y Ejecución
-
-### العربية 🇸🇦
-#### المتطلبات الأساسية
-- Node.js >= 16.x
-- Python >= 3.8 (يُوصى بـ 3.14.3)
-- Git
-
-**ملاحظة لمستخدمي Windows**: راجع [WINDOWS_SETUP.md](WINDOWS_SETUP.md) للحصول على تعليمات مفصلة باستخدام Chocolatey.
-
-#### بدء التطوير
 ```bash
+# Clone repository
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+
+# Install dependencies
 npm install
-npm run dev
-```
 
-#### البناء للإنتاج
-```bash
-npm run build
-npm run start
-```
+# Development
+npm run dev         # Start development server
+npm run build       # Build for production
+npm run serve       # Serve built files locally
+npm run clean       # Clean build artifacts
 
-#### الاختبارات
-```bash
-npm test
-npm run lint
-```
-
-### English 🇬🇧
-#### Prerequisites
-- Node.js >= 16.x
-- Python >= 3.8 (3.14.3 recommended)
-- Git
-
-**Windows Users**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed setup instructions using Chocolatey.
-
-#### Development
-```bash
-npm install
-npm run dev
-```
-
-#### Production Build
-```bash
-npm run build
-npm run start
-```
-
-#### Testing
-```bash
-npm test
-npm run lint
-```
-
-### Deutsch 🇩🇪
-#### Voraussetzungen
-- Node.js >= 16.x
-- Python >= 3.8 (3.14.3 empfohlen)
-- Git
-
-**Windows-Benutzer**: Siehe [WINDOWS_SETUP.md](WINDOWS_SETUP.md) für detaillierte Anweisungen mit Chocolatey.
-
-#### Entwicklung
-```bash
-npm install
-npm run dev
-```
-
-#### Produktion
-```bash
-npm run build
-npm run start
-```
-
-#### Tests
-```bash
+# Testing
 npm test
 npm run lint
 ```
