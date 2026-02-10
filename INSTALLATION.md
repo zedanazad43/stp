@@ -6,14 +6,32 @@
 1. تأكد من وجود Python وNode.js
 2. استنسخ المشروع:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. ثبّت المتطلبات:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
+
+### باستخدام Docker
+1. تأكد من تثبيت Docker Desktop وتشغيله
+   - Windows: قم بتشغيل Docker Desktop من قائمة ابدأ
+   - تحقق من أن Docker يعمل: `docker --version`
+2. اسحب صورة Docker:
+   ```
+   docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+   ```
+3. شغّل الحاوية:
+   ```
+   docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+   ```
+4. افتح المتصفح على: `http://localhost:8080`
+
+**استكشاف الأخطاء**:
+- إذا ظهرت رسالة "failed to connect to docker API": تأكد من تشغيل Docker Desktop
+- Windows: Docker Desktop يجب أن يكون مفتوحاً وعاملاً في الخلفية
 
 ### باستخدام Docker (موصى به)
 1. تأكد من تثبيت Docker Desktop وتشغيله
@@ -39,13 +57,13 @@
 1. Ensure Python & Node.js are installed.
 2. Clone:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. Install:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
 
 ### Using Docker (Recommended)
@@ -72,13 +90,13 @@
 1. Sorge dafür, dass Python & Node.js installiert sind.
 2. Klonen:
    ```
-   git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-   cd stampcoin-platform
+   git clone https://github.com/zedanazad43/stp.git
+   cd stp
    ```
 3. Installieren:
    ```
-   pip install -r requirements.txt
    npm install
+   pip install -r requirements.txt
    ```
 
 ### Mit Docker (Empfohlen)

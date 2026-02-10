@@ -1,33 +1,50 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Configure Node.js environment
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
 
-    - name: Install dependencies
+    - name: Install project dependencies
       run: npm ci
 
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to production
+    - name: Generate static website
       run: |
-        echo "Deploying to production..."
-        echo "Deployment successful!"
-        # Add your deployment commands here when ready
+        npm run build
+        mkdir -p public
+        bash scripts/generate-landing-page.sh public
+
+    - name: Initialize GitHub Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload deployment artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: './public'
+
+    - name: Publish to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
