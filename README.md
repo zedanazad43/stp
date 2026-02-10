@@ -170,6 +170,15 @@ Ver [INSTALLATION.md](INSTALLATION.md) para más información.
 - Node.js >= 16.x
 - Python >= 3.9
 - Git
+- Docker Desktop (اختياري - للتشغيل باستخدام حاويات Docker)
+
+#### التشغيل باستخدام Docker (موصى به)
+```bash
+# تأكد من تشغيل Docker Desktop أولاً
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# افتح المتصفح على: http://localhost:8080
+```
 
 **ملاحظة لمستخدمي Windows**: راجع [WINDOWS_SETUP.md](WINDOWS_SETUP.md) للحصول على تعليمات مفصلة باستخدام Chocolatey.
 
@@ -196,6 +205,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.9
 - Git
+- Docker Desktop (optional - for running with Docker containers)
+
+#### Running with Docker (Recommended)
+```bash
+# Ensure Docker Desktop is running first
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Open browser to: http://localhost:8080
+```
 
 **Windows Users**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed setup instructions using Chocolatey.
 
@@ -222,6 +240,15 @@ npm run lint
 - Node.js >= 16.x
 - Python >= 3.9
 - Git
+- Docker Desktop (optional - für Ausführung mit Docker-Containern)
+
+#### Mit Docker ausführen (Empfohlen)
+```bash
+# Stelle sicher, dass Docker Desktop läuft
+docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+# Öffne Browser auf: http://localhost:8080
+```
 
 **Windows-Benutzer**: Siehe [WINDOWS_SETUP.md](WINDOWS_SETUP.md) für detaillierte Anweisungen mit Chocolatey.
 
