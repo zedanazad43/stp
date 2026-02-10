@@ -33,6 +33,24 @@
 - إذا ظهرت رسالة "failed to connect to docker API": تأكد من تشغيل Docker Desktop
 - Windows: Docker Desktop يجب أن يكون مفتوحاً وعاملاً في الخلفية
 
+### باستخدام Docker (موصى به)
+1. تأكد من تثبيت Docker Desktop وتشغيله
+   - Windows: قم بتشغيل Docker Desktop من قائمة ابدأ
+   - تحقق من أن Docker يعمل: `docker --version`
+2. اسحب صورة Docker:
+   ```
+   docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
+   ```
+3. شغّل الحاوية:
+   ```
+   docker run -p 8080:8080 ghcr.io/zedanazad43/stampcoin-platform:latest
+   ```
+4. افتح المتصفح على: `http://localhost:8080`
+
+**استكشاف الأخطاء**:
+- إذا ظهرت رسالة "failed to connect to docker API": تأكد من تشغيل Docker Desktop
+- Windows: Docker Desktop يجب أن يكون مفتوحاً وعاملاً في الخلفية
+
 ## English 🇬🇧
 
 ### Traditional Installation
@@ -48,7 +66,7 @@
    pip install -r requirements.txt
    ```
 
-### Using Docker
+### Using Docker (Recommended)
 1. Install and start Docker Desktop
    - Windows: Launch Docker Desktop from the Start menu
    - Verify Docker is running: `docker --version`
@@ -81,7 +99,7 @@
    pip install -r requirements.txt
    ```
 
-### Mit Docker
+### Mit Docker (Empfohlen)
 1. Installiere und starte Docker Desktop
    - Windows: Starte Docker Desktop vom Startmenü
    - Überprüfe, dass Docker läuft: `docker --version`

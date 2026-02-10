@@ -34,8 +34,14 @@ temp/
 test-output/
 *.tmp
 /tmp/
+*.tmp
 
-# Lock files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data files
+data.json

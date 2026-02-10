@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - copilot/publish-project-website
   workflow_dispatch:
 
 permissions:
@@ -29,7 +28,13 @@ jobs:
       - name: Generate static website
         run: |
           mkdir -p _site
-          # Copy docs files if directory exists
+          # Copy website files
+          cp index.html _site/ || echo "No index.html found"
+          cp README.md _site/ || echo "No README found"
+          cp INSTALLATION.md _site/ || echo "No INSTALLATION found"
+          cp SECURITY.md _site/ || echo "No SECURITY found"
+          cp CONTRIBUTING.md _site/ || echo "No CONTRIBUTING found"
+          # Copy docs directory if it exists
           if [ -d "docs" ]; then
             cp docs/* _site/ 2>/dev/null || echo "No files found in docs directory"
           fi
@@ -41,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./_site
 
   deploy:
     needs: build
