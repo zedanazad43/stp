@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - copilot/publish-project-website
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -24,7 +26,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Build static site
+      - name: Create dist directory
         run: |
           mkdir -p _site
           # Copy docs files if directory exists
@@ -160,14 +162,18 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          enablement: true
