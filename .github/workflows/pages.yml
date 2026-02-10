@@ -25,7 +25,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Create dist directory
+      - name: Generate static website
         run: |
           mkdir -p _site
           # Copy website files
@@ -36,7 +36,11 @@ jobs:
           cp CONTRIBUTING.md _site/ || echo "No CONTRIBUTING found"
           # Copy docs directory if it exists
           if [ -d "docs" ]; then
-            cp -r docs _site/ || echo "No docs directory"
+            cp docs/* _site/ 2>/dev/null || echo "No files found in docs directory"
+          fi
+          if [ ! -f _site/index.html ]; then
+            echo "Creating index.html..."
+            bash scripts/generate-landing-page.sh _site
           fi
 
       - name: Upload artifact
