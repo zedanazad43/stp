@@ -1,9 +1,15 @@
-# Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
+# Stampcoin منصة رقمية | Digital Platform | Digitale Plattform | 数字平台 | Plateforme Numérique | Plataforma Digital
 
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
 > **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
 > For detailed preservation information, see [PRESERVATION_NOTES.md](PRESERVATION_NOTES.md) and [FILE_INVENTORY.md](FILE_INVENTORY.md)
+
+---
+
+## 🌍 Multilingual Support | دعم متعدد اللغات | Mehrsprachige Unterstützung | 多语言支持 | Support Multilingue | Soporte Multilingüe
+
+This platform supports **6 languages**: العربية • English • Deutsch • 中文 • Français • Español
 
 ---
 
@@ -13,11 +19,23 @@
 Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
 
 ### المميزات
-- محفظة طوابع رقمية
+- محفظة طوابع رقمية (Digital Wallet API)
+  - إنشاء وإدارة المحافظ الرقمية
+  - إدارة الأرصدة والطوابع الرقمية
+  - تحويلات آمنة بين المستخدمين (P2P)
+  - سجل المعاملات الكامل
+- **مؤسسة السوق (Market Institution API) - جديد!**
+  - إضافة وإدارة عناصر السوق
+  - شراء وبيع الطوابع الرقمية
+  - سجل المعاملات التجارية
+  - تكامل كامل مع المحافظ الرقمية
 - تعاملات آمنة بين المستخدمين
 - سوق طوابع رقمية ومقتنيات حديثة
 - إدارة ملفات المستخدم والتحقق
 - تكامل API وخدمات إضافية
+
+### البدء السريع
+راجع [دليل البدء السريع](QUICKSTART.md) للبدء بسرعة!
 
 ### الإنطلاق
 ```
@@ -34,11 +52,23 @@ cd stampcoin-platform
 Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
 
 ### Features
-- Digital stamps wallet
+- Digital stamps wallet with full API
+  - Create and manage digital wallets
+  - Balance and digital stamps management
+  - Secure peer-to-peer transfers
+  - Complete transaction history
+- **Market Institution API - New!**
+  - Add and manage market items
+  - Buy and sell digital stamps
+  - Commercial transaction history
+  - Full integration with digital wallets
 - Secure peer-to-peer transfers
 - Marketplace for digital stamps & collectibles
 - User profile & verification
 - API integration
+
+### Quick Start
+See the [Quick Start Guide](QUICKSTART.md) to get started quickly!
 
 ### Start
 ```
@@ -70,7 +100,70 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 
 ---
 
-## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung
+## 中文 🇨🇳
+
+### 描述
+Stampcoin 是一个基于区块链技术的创新平台，专注于数字邮票、奖励和忠诚度代币。
+
+### 功能特点
+- 数字邮票钱包
+- 安全的点对点转账
+- 数字邮票和收藏品市场
+- 用户资料和验证
+- API 集成
+
+### 开始使用
+```
+git clone https://github.com/stampcoin-platform/stampcoin-platform.git
+cd stampcoin-platform
+```
+更多信息请参见 [INSTALLATION.md](INSTALLATION.md)
+
+---
+
+## Français 🇫🇷
+
+### Description
+Stampcoin est une plateforme innovante de monnaie numérique basée sur la technologie blockchain, axée sur les timbres numériques, les récompenses et les jetons de fidélité.
+
+### Fonctionnalités
+- Portefeuille de timbres numériques
+- Transferts peer-to-peer sécurisés
+- Place de marché pour timbres et objets de collection numériques
+- Profil utilisateur et vérification
+- Intégration API
+
+### Démarrer
+```
+git clone https://github.com/stampcoin-platform/stampcoin-platform.git
+cd stampcoin-platform
+```
+Voir [INSTALLATION.md](INSTALLATION.md) pour plus d'informations.
+
+---
+
+## Español 🇪🇸
+
+### Descripción
+Stampcoin es una plataforma innovadora de moneda digital basada en tecnología blockchain, enfocada en sellos digitales, recompensas y tokens de lealtad.
+
+### Características
+- Cartera de sellos digitales
+- Transferencias peer-to-peer seguras
+- Mercado de sellos digitales y coleccionables
+- Perfil de usuario y verificación
+- Integración API
+
+### Comenzar
+```
+git clone https://github.com/stampcoin-platform/stampcoin-platform.git
+cd stampcoin-platform
+```
+Ver [INSTALLATION.md](INSTALLATION.md) para más información.
+
+---
+
+## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung / 部署和运行 / Déploiement et Exécution / Implementación y Ejecución
 
 📚 **للحصول على دليل نشر شامل، انظر [DEPLOYMENT.md](DEPLOYMENT.md)**  
 📚 **For comprehensive deployment guide, see [DEPLOYMENT.md](DEPLOYMENT.md)**  
@@ -79,7 +172,7 @@ Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
 ### العربية 🇸🇦
 #### المتطلبات الأساسية
 - Node.js >= 16.x
-- Python >= 3.8 (يُوصى بـ 3.14.3)
+- Python >= 3.9
 - Git
 
 **ملاحظة لمستخدمي Windows**: راجع [WINDOWS_SETUP.md](WINDOWS_SETUP.md) للحصول على تعليمات مفصلة باستخدام Chocolatey.
@@ -105,7 +198,7 @@ npm run lint
 ### English 🇬🇧
 #### Prerequisites
 - Node.js >= 16.x
-- Python >= 3.8 (3.14.3 recommended)
+- Python >= 3.9
 - Git
 
 **Windows Users**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed setup instructions using Chocolatey.
@@ -131,7 +224,7 @@ npm run lint
 ### Deutsch 🇩🇪
 #### Voraussetzungen
 - Node.js >= 16.x
-- Python >= 3.8 (3.14.3 empfohlen)
+- Python >= 3.9
 - Git
 
 **Windows-Benutzer**: Siehe [WINDOWS_SETUP.md](WINDOWS_SETUP.md) für detaillierte Anweisungen mit Chocolatey.
@@ -154,15 +247,187 @@ npm test
 npm run lint
 ```
 
+### Wallet API | واجهة برمجة المحفظة
+
+For detailed information about the Digital Wallet API endpoints and usage, see [WALLET_API.md](WALLET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
+
+### Market Institution API | واجهة برمجة مؤسسة السوق
+
+For detailed information about the Market Institution API endpoints and usage, see [MARKET_API.md](MARKET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات مؤسسة السوق واستخدامها، راجع [MARKET_API.md](MARKET_API.md).
+
 ---
 
-## الأمان / Security / Sicherheit
+### 中文 🇨🇳
+#### 先决条件
+- Node.js >= 16.x
+- Python >= 3.8 (推荐 3.14.3)
+- Git
 
-⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG**
+**Windows 用户**：请参阅 [WINDOWS_SETUP.md](WINDOWS_SETUP.md) 了解使用 Chocolatey 的详细设置说明。
+
+#### 开发
+```bash
+npm install
+npm run dev
+```
+
+#### 生产构建
+```bash
+npm run build
+npm run start
+```
+
+#### 测试
+```bash
+npm test
+npm run lint
+```
+
+---
+
+### Français 🇫🇷
+#### Prérequis
+- Node.js >= 16.x
+- Python >= 3.8 (3.14.3 recommandé)
+- Git
+
+**Utilisateurs Windows** : Voir [WINDOWS_SETUP.md](WINDOWS_SETUP.md) pour des instructions détaillées d'installation avec Chocolatey.
+
+#### Développement
+```bash
+npm install
+npm run dev
+```
+
+#### Build de Production
+```bash
+npm run build
+npm run start
+```
+
+#### Tests
+```bash
+npm test
+npm run lint
+```
+
+---
+
+### Español 🇪🇸
+#### Requisitos Previos
+- Node.js >= 16.x
+- Python >= 3.8 (3.14.3 recomendado)
+- Git
+
+**Usuarios de Windows**: Ver [WINDOWS_SETUP.md](WINDOWS_SETUP.md) para instrucciones detalladas de configuración usando Chocolatey.
+
+#### Desarrollo
+```bash
+npm install
+npm run dev
+```
+
+#### Build de Producción
+```bash
+npm run build
+npm run start
+```
+
+#### Pruebas
+```bash
+npm test
+npm run lint
+```
+
+---
+
+## الأمان / Security / Sicherheit / 安全 / Sécurité / Seguridad
+
+⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG** / **安全警告** / **AVERTISSEMENT DE SÉCURITÉ** / **ADVERTENCIA DE SEGURIDAD**
 
 - لا تشارك مفاتيح API أو كلمات المرور في المستودع
 - استخدم متغيرات البيئة (.env) للبيانات الحساسة
 - راجع [SECURITY.md](SECURITY.md) للمزيد من التفاصيل
+
+---
+
+## 🚀 التكامل المستمر/التسليم المستمر | CI/CD | CI/CD
+
+### العربية 🇸🇦
+
+#### خوادم التشغيل المستضافة ذاتيًا (Self-Hosted Runners)
+
+يدعم هذا المستودع تشغيل سير العمل CI/CD على خوادمك الخاصة باستخدام GitHub Actions Self-Hosted Runners.
+
+**المزايا:**
+- 🏢 التحكم الكامل في بيئة التشغيل
+- 💰 توفير التكاليف للمشاريع الكبيرة
+- 🔒 الأمان المحسّن لمتطلبات الامتثال
+- ⚡ أداء أفضل مع الأجهزة المخصصة
+
+**البدء السريع:**
+```bash
+# دليل سريع متاح في
+📄 QUICKSTART_SELF_HOSTED_RUNNER.md
+
+# دليل مفصل متاح في
+📚 SELF_HOSTED_RUNNER_SETUP.md
+```
+
+**سير العمل المتاح:**
+- ✅ `self-hosted-ci.yml` - بناء واختبار تلقائي على خوادمك
+
+### English 🇬🇧
+
+#### Self-Hosted Runners
+
+This repository supports running CI/CD workflows on your own infrastructure using GitHub Actions Self-Hosted Runners.
+
+**Benefits:**
+- 🏢 Full control over execution environment
+- 💰 Cost savings for high-volume projects
+- 🔒 Enhanced security for compliance requirements
+- ⚡ Better performance with dedicated hardware
+
+**Quick Start:**
+```bash
+# Quick guide available at
+📄 QUICKSTART_SELF_HOSTED_RUNNER.md
+
+# Detailed guide available at
+📚 SELF_HOSTED_RUNNER_SETUP.md
+```
+
+**Available Workflows:**
+- ✅ `self-hosted-ci.yml` - Automated build and test on your servers
+
+### Deutsch 🇩🇪
+
+#### Self-Hosted Runner
+
+Dieses Repository unterstützt die Ausführung von CI/CD-Workflows auf Ihrer eigenen Infrastruktur mit GitHub Actions Self-Hosted Runners.
+
+**Vorteile:**
+- 🏢 Volle Kontrolle über die Ausführungsumgebung
+- 💰 Kosteneinsparungen für umfangreiche Projekte
+- 🔒 Verbesserte Sicherheit für Compliance-Anforderungen
+- ⚡ Bessere Leistung mit dedizierter Hardware
+
+**Schnellstart:**
+```bash
+# Kurzanleitung verfügbar unter
+📄 QUICKSTART_SELF_HOSTED_RUNNER.md
+
+# Detaillierte Anleitung verfügbar unter
+📚 SELF_HOSTED_RUNNER_SETUP.md
+```
+
+**Verfügbare Workflows:**
+- ✅ `self-hosted-ci.yml` - Automatisiertes Bauen und Testen auf Ihren Servern
 
 ---
 
