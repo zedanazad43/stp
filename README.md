@@ -2,6 +2,8 @@
 
 🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.html)**
 
+> **🌐 Live Demo**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+
 > **📦 Repository Preservation Notice**  
 > This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
 > **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
@@ -260,7 +262,25 @@ npm run lint
 
 ---
 
-## 🌐 Website & Publishing / الموقع الإلكتروني / Website & Veröffentlichung
+## النشر / Deployment / Bereitstellung
+
+### العربية 🇸🇦
+- **الموقع المباشر**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **دليل النشر الكامل**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### English 🇬🇧
+- **Live Site**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **Full Deployment Guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### Deutsch 🇩🇪
+- **Live-Website**: [https://zedanazad43.github.io/stp/](https://zedanazad43.github.io/stp/)
+- **Vollständige Bereitstellungsanleitung**: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+---
+
+## الأمان / Security / Sicherheit
+
+⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG**
 
 The Stampcoin platform includes an official website hosted on GitHub Pages:
 
