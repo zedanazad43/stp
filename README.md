@@ -1,4 +1,4 @@
-# Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
+# Stampcoin منصة رقمية | Digital Platform | Digitale Plattform | 数字平台 | Plateforme Numérique | Plataforma Digital
 
 🌐 **[Visit the Official Website](https://zedanazad43.github.io/stp/)** | **[View Documentation](docs/)** | **[Roadmap](docs/roadmap.html)**
 
@@ -9,17 +9,35 @@
 
 ---
 
+## 🌍 Multilingual Support | دعم متعدد اللغات | Mehrsprachige Unterstützung | 多语言支持 | Support Multilingue | Soporte Multilingüe
+
+This platform supports **6 languages**: العربية • English • Deutsch • 中文 • Français • Español
+
+---
+
 ## العربية 🇸🇦
 
 ### الوصف
 Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
 
 ### المميزات
-- محفظة طوابع رقمية
+- محفظة طوابع رقمية (Digital Wallet API)
+  - إنشاء وإدارة المحافظ الرقمية
+  - إدارة الأرصدة والطوابع الرقمية
+  - تحويلات آمنة بين المستخدمين (P2P)
+  - سجل المعاملات الكامل
+- **مؤسسة السوق (Market Institution API) - جديد!**
+  - إضافة وإدارة عناصر السوق
+  - شراء وبيع الطوابع الرقمية
+  - سجل المعاملات التجارية
+  - تكامل كامل مع المحافظ الرقمية
 - تعاملات آمنة بين المستخدمين
 - سوق طوابع رقمية ومقتنيات حديثة
 - إدارة ملفات المستخدم والتحقق
 - تكامل API وخدمات إضافية
+
+### البدء السريع
+راجع [دليل البدء السريع](QUICKSTART.md) للبدء بسرعة!
 
 ### الإنطلاق
 ```bash
@@ -40,11 +58,23 @@ npm run build
 Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
 
 ### Features
-- Digital stamps wallet
+- Digital stamps wallet with full API
+  - Create and manage digital wallets
+  - Balance and digital stamps management
+  - Secure peer-to-peer transfers
+  - Complete transaction history
+- **Market Institution API - New!**
+  - Add and manage market items
+  - Buy and sell digital stamps
+  - Commercial transaction history
+  - Full integration with digital wallets
 - Secure peer-to-peer transfers
 - Marketplace for digital stamps & collectibles
 - User profile & verification
 - API integration
+
+### Quick Start
+See the [Quick Start Guide](QUICKSTART.md) to get started quickly!
 
 ### Start
 ```bash
@@ -105,6 +135,102 @@ npm run serve       # Serve built files locally
 npm run clean       # Clean build artifacts
 
 # Testing
+npm test
+npm run lint
+```
+
+### Wallet API | واجهة برمجة المحفظة
+
+For detailed information about the Digital Wallet API endpoints and usage, see [WALLET_API.md](WALLET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
+
+### Market Institution API | واجهة برمجة مؤسسة السوق
+
+For detailed information about the Market Institution API endpoints and usage, see [MARKET_API.md](MARKET_API.md).
+
+للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات مؤسسة السوق واستخدامها، راجع [MARKET_API.md](MARKET_API.md).
+
+---
+
+### 中文 🇨🇳
+#### 先决条件
+- Node.js >= 16.x
+- Python >= 3.8 (推荐 3.14.3)
+- Git
+
+**Windows 用户**：请参阅 [WINDOWS_SETUP.md](WINDOWS_SETUP.md) 了解使用 Chocolatey 的详细设置说明。
+
+#### 开发
+```bash
+npm install
+npm run dev
+```
+
+#### 生产构建
+```bash
+npm run build
+npm run start
+```
+
+#### 测试
+```bash
+npm test
+npm run lint
+```
+
+---
+
+### Français 🇫🇷
+#### Prérequis
+- Node.js >= 16.x
+- Python >= 3.8 (3.14.3 recommandé)
+- Git
+
+**Utilisateurs Windows** : Voir [WINDOWS_SETUP.md](WINDOWS_SETUP.md) pour des instructions détaillées d'installation avec Chocolatey.
+
+#### Développement
+```bash
+npm install
+npm run dev
+```
+
+#### Build de Production
+```bash
+npm run build
+npm run start
+```
+
+#### Tests
+```bash
+npm test
+npm run lint
+```
+
+---
+
+### Español 🇪🇸
+#### Requisitos Previos
+- Node.js >= 16.x
+- Python >= 3.8 (3.14.3 recomendado)
+- Git
+
+**Usuarios de Windows**: Ver [WINDOWS_SETUP.md](WINDOWS_SETUP.md) para instrucciones detalladas de configuración usando Chocolatey.
+
+#### Desarrollo
+```bash
+npm install
+npm run dev
+```
+
+#### Build de Producción
+```bash
+npm run build
+npm run start
+```
+
+#### Pruebas
+```bash
 npm test
 npm run lint
 ```
