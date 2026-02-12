@@ -38,18 +38,11 @@ jobs:
           if [ -d "docs" ]; then
             cp docs/* _site/ 2>/dev/null || echo "No files found in docs directory"
           fi
-          if [ ! -f _site/index.html ]; then
-<<<<<<< HEAD
+          if [ ! -f _site/index.html ]; then<<<<<<< ^HEAD
           echo "Creating index.html..."
-          cat > _site/index.html <<EOF
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Stampcoin Platform</title>
+          cat > _site/index.html <<EOF<!DOCTYPE html><html lang="en"<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"   <title>Stampcoin Platform</title>
       <style type="text/css">
-        '* { margin: 0; padding: 0; box-sizing: border-box; }'
+        '* { margin: 0; padding: 0; box-sizir-box; }'
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
           line-height: 1.6;
