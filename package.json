@@ -1,7 +1,7 @@
 {
   "name": "stampcoin-platform",
-  "version": "1.0.0",
-  "description": "Stampcoin Digital Platform - Blockchain-based digital stamps platform",
+  "version": "2.0.0",
+  "description": "Stampcoin Digital Platform - Blockchain-based digital stamps platform with wallet and marketplace",
   "main": "server.js",
   "license": "MIT",
   "private": true,
@@ -9,13 +9,16 @@
     "start": "node server.js",
     "dev": "node server.js",
     "build": "mkdir -p public && echo 'Static site ready for deployment'",
-    "test": "echo 'No tests defined yet'",
-    "lint": "echo 'No linting configured yet'"
+    "test": "echo 'Tests can be configured'",
+    "lint": "echo 'Linting can be configured'",
+    "docker:build": "docker build -t stampcoin-platform .",
+    "docker:run": "docker run -p 8080:8080 stampcoin-platform"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
   },
+  "devDependencies": {},
   "engines": {
     "node": ">=16.x"
   },
@@ -24,8 +27,13 @@
     "blockchain",
     "digital-stamps",
     "collectibles",
-    "marketplace"
+    "marketplace",
+    "wallet",
+    "digital-currency"
   ],
   "author": "Azad Zedan",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zedanazad43/stp.git"
+  }
 }
