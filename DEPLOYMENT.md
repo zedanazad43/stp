@@ -114,25 +114,50 @@ The repository includes automated workflows for building and deploying:
 
 ### 1. Build and Push Workflow
 
-**File**: `.github/workflows/build-and-push2.yml`
+**File**: `.github/workflows/build-and-test.yml`
 
-**Triggers**: Pushes to `main` branch
+**Triggers**: Pushes to `main` and `develop` branches, PRs to `main`
 
 **Actions**:
+- Runs tests and linting
 - Builds Docker image
 - Pushes to GitHub Container Registry (ghcr.io)
-- Tags as `latest`
+- Deploys to Render (on push to main)
 
 **Usage**:
 ```bash
-# The workflow runs automatically on push to main
+# The workflow runs automatically on push to main or develop
 git push origin main
+git push origin develop
 ```
 
 **Access the image**:
 ```bash
 docker pull ghcr.io/zedanazad43/stampcoin-platform:latest
 ```
+
+### 2. Render Deployment Configuration
+
+**File**: `render.yaml`
+
+This file defines the service configuration for Render deployment.
+
+**Features**:
+- Node.js runtime environment
+- Docker-based deployment
+- Health checks
+- Environment variables configuration
+
+**Manual Deployment**:
+1. Create a Render account at [https://render.com/](https://render.com/)
+2. Connect your GitHub repository to Render
+3. Create a new Web Service from your repository
+4. The service will use the `render.yaml` configuration
+
+**Environment Variables**:
+- `NODE_ENV`: Set to "production"
+- `PORT`: Render uses port 10000 by default
+- `SYNC_TOKEN`: Required for authentication in production
 
 ### 2. GitHub Pages Deployment
 
@@ -211,10 +236,15 @@ fly deploy
 2. Create new Web Service
 3. Connect GitHub repository
 4. Configure:
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
+   - **Build Command**: `npm ci`
+   - **Start Command**: `node server.js`
    - **Environment**: Node
-   - **Port**: 8080
+   - **Port**: 10000 (Render default)
+
+Alternatively, you can use the `render.yaml` file for automated configuration:
+1. Create a new Web Service
+2. Select "Configure with render.yaml"
+3. The service will automatically use the configuration in the repository
 
 ### Heroku
 
