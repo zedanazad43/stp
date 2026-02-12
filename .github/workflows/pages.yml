@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -24,14 +25,21 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Build static site
+      - name: Generate static website
         run: |
           mkdir -p _site
-          # Copy docs files if directory exists
+          # Copy website files
+          cp index.html _site/ || echo "No index.html found"
+          cp README.md _site/ || echo "No README found"
+          cp INSTALLATION.md _site/ || echo "No INSTALLATION found"
+          cp SECURITY.md _site/ || echo "No SECURITY found"
+          cp CONTRIBUTING.md _site/ || echo "No CONTRIBUTING found"
+          # Copy docs directory if it exists
           if [ -d "docs" ]; then
             cp docs/* _site/ 2>/dev/null || echo "No files found in docs directory"
           fi
           if [ ! -f _site/index.html ]; then
+<<<<<<< HEAD
           echo "Creating index.html..."
           cat > _site/index.html <<EOF
     <!DOCTYPE html>
@@ -156,18 +164,26 @@ jobs:
 </body>
 </html>
 EOF
+=======
+            echo "Creating index.html..."
+            bash scripts/generate-landing-page.sh _site
+>>>>>>> a4f0e2ee76d23aa5eaf9d56063365761bc958a18
           fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          enablement: true

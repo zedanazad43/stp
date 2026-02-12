@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Git files
 .git
 .gitignore
@@ -106,3 +107,19 @@ Thumbs.db
 
 # Custom
 data.json
+=======
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+*.md
+docs
+.github
+.vscode
+.env.local
+.env.*.local
+*.log
+.DS_Store
+Thumbs.db
+>>>>>>> a4f0e2ee76d23aa5eaf9d56063365761bc958a18

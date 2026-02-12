@@ -1,271 +1,172 @@
-# Stampcoin منصة رقمية | Digital Platform | Digitale Plattform
+# 🏛️ Stampcoin Platform | منصة ستامب كوين
 
-> **📦 Repository Preservation Notice**  
-> This repository contains a complete backup of all files from [stampcoin-platform/stampcoin-platform](https://github.com/stampcoin-platform/stampcoin-platform).  
-> **Import Date**: February 5, 2026 | **Total Files**: 55 | **Status**: ✅ Verified  
-> For detailed preservation information, see [PRESERVATION_NOTES.md](PRESERVATION_NOTES.md) and [FILE_INVENTORY.md](FILE_INVENTORY.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](Dockerfile)
 
----
+An innovative blockchain-based digital stamps platform with wallet and marketplace features.
 
-## العربية 🇸🇦
-
-### الوصف
-Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
-
-### المميزات
-- محفظة طوابع رقمية (Digital Wallet API)
-  - إنشاء وإدارة المحافظ الرقمية
-  - إدارة الأرصدة والطوابع الرقمية
-  - تحويلات آمنة بين المستخدمين (P2P)
-  - سجل المعاملات الكامل
-- **مؤسسة السوق (Market Institution API) - جديد!**
-  - إضافة وإدارة عناصر السوق
-  - شراء وبيع الطوابع الرقمية
-  - سجل المعاملات التجارية
-  - تكامل كامل مع المحافظ الرقمية
-- تعاملات آمنة بين المستخدمين
-- سوق طوابع رقمية ومقتنيات حديثة
-- إدارة ملفات المستخدم والتحقق
-- تكامل API وخدمات إضافية
-
-### البدء السريع
-راجع [دليل البدء السريع](QUICKSTART.md) للبدء بسرعة!
-
-### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
+🌐 **[Live Demo](https://zedanazad43.github.io/stp/)** | 📖 **[Documentation](docs/)** | 🛣️ **[Roadmap](docs/roadmap.html)**
 
 ---
 
-## English 🇬🇧
+## 🌍 Languages | اللغات
 
-### Description
-Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
-
-### Features
-- Digital stamps wallet with full API
-  - Create and manage digital wallets
-  - Balance and digital stamps management
-  - Secure peer-to-peer transfers
-  - Complete transaction history
-- **Market Institution API - New!**
-  - Add and manage market items
-  - Buy and sell digital stamps
-  - Commercial transaction history
-  - Full integration with digital wallets
-- Secure peer-to-peer transfers
-- Marketplace for digital stamps & collectibles
-- User profile & verification
-- API integration
-
-### Quick Start
-See the [Quick Start Guide](QUICKSTART.md) to get started quickly!
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
+- **العربية** 🇸🇦 | **English** 🇬🇧 | **Deutsch** 🇩🇪 | **中文** 🇨🇳 | **Français** 🇫🇷 | **Español** 🇪🇸
 
 ---
 
-## Deutsch 🇩🇪
+## ✨ Features | المميزات
 
-### Beschreibung
-Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Briefmarken, Prämien und loyale Sammler.
-
-### Haupt-Features
-- Digitale Wallet für Stampcoins
-- Sichere Nutzer-Transaktionen
-- Märkte für Sammlerstücke und Stampcoins
-- Nutzerprofile & Verifikationen
-- API-Integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
+- 🏦 **Digital Wallet API** - Create, manage, and transfer digital stamps securely
+- 🛍️ **Market Institution API** - Buy, sell, and trade digital stamps in a marketplace
+- 🔐 **Secure P2P Transfers** - Peer-to-peer transactions with full transaction history
+- 🌐 **Multi-Language Support** - 6+ languages supported
+- 🐳 **Docker Ready** - Full Docker and Docker Compose support
+- ⚡ **High Performance** - Built with Express.js and Node.js
 
 ---
 
-## النشر والتشغيل / Deployment & Running / Bereitstellung & Ausführung
+## 🚀 Quick Start
 
-### العربية 🇸🇦
-#### المتطلبات الأساسية
+### Prerequisites
 - Node.js >= 16.x
-- Python >= 3.8 (يُوصى بـ 3.14.3)
 - Git
+- Docker (optional, recommended)
 
-**ملاحظة لمستخدمي Windows**: راجع [WINDOWS_SETUP.md](WINDOWS_SETUP.md) للحصول على تعليمات مفصلة باستخدام Chocolatey.
+### Using Docker (Recommended)
 
-#### بدء التطوير
 ```bash
+# Clone repository
+git clone https://github.com/zedanazad43/stp.git
+cd stp
+
+# Start with Docker Compose
+docker compose up --build
+
+# Access at http://localhost:8080
+```
+
+### Local Development
+
+```bash
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Access at http://localhost:8080
 ```
 
-#### البناء للإنتاج
-```bash
-npm run build
-npm run start
-```
+---
 
-#### الاختبارات
-```bash
-npm test
-npm run lint
-```
+## 📦 Installation & Setup
 
-### English 🇬🇧
-#### Prerequisites
-- Node.js >= 16.x
-- Python >= 3.8 (3.14.3 recommended)
-- Git
+See detailed guides:
+- **[Installation Guide](INSTALLATION.md)**
+- **[Windows Setup](WINDOWS_SETUP.md)**
+- **[Quick Start](QUICKSTART.md)**
 
-**Windows Users**: See [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed setup instructions using Chocolatey.
+---
 
-#### Development
-```bash
-npm install
-npm run dev
-```
-
-#### Production Build
-```bash
-npm run build
-npm run start
-```
-
-#### Testing
-```bash
-npm test
-npm run lint
-```
-
-### Deutsch 🇩🇪
-#### Voraussetzungen
-- Node.js >= 16.x
-- Python >= 3.8 (3.14.3 empfohlen)
-- Git
-
-**Windows-Benutzer**: Siehe [WINDOWS_SETUP.md](WINDOWS_SETUP.md) für detaillierte Anweisungen mit Chocolatey.
-
-#### Entwicklung
-```bash
-npm install
-npm run dev
-```
-
-#### Produktion
-```bash
-npm run build
-npm run start
-```
-
-#### Tests
-```bash
-npm test
-npm run lint
-```
+## 🔌 API Documentation
 
 ### Wallet API | واجهة برمجة المحفظة
+Complete wallet management endpoints and examples: **[WALLET_API.md](WALLET_API.md)**
 
-For detailed information about the Digital Wallet API endpoints and usage, see [WALLET_API.md](WALLET_API.md).
-
-للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات المحفظة الرقمية واستخدامها، راجع [WALLET_API.md](WALLET_API.md).
-
-### Market Institution API | واجهة برمجة مؤسسة السوق
-
-For detailed information about the Market Institution API endpoints and usage, see [MARKET_API.md](MARKET_API.md).
-
-للحصول على معلومات مفصلة حول نقاط نهاية واجهة برمجة تطبيقات مؤسسة السوق واستخدامها، راجع [MARKET_API.md](MARKET_API.md).
+### Market API | واجهة برمجة السوق
+Complete marketplace endpoints and examples: **[MARKET_API.md](MARKET_API.md)**
 
 ---
 
-## الأمان / Security / Sicherheit
+## 🛠️ Development
 
-⚠️ **تحذير أمني مهم** / **SECURITY WARNING** / **SICHERHEITSWARNUNG**
+```bash
+# Install dependencies
+npm install
 
-- لا تشارك مفاتيح API أو كلمات المرور في المستودع
-- استخدم متغيرات البيئة (.env) للبيانات الحساسة
-- راجع [SECURITY.md](SECURITY.md) للمزيد من التفاصيل
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run tests
+npm test
+
+# Run linting
+npm lint
+```
+
+### Docker Commands
+
+```bash
+# Build Docker image
+npm run docker:build
+
+# Run Docker container
+npm run docker:run
+
+# Or use Docker Compose
+docker compose up
+docker compose down
+```
 
 ---
 
-### Contributions
+## 📚 Full Documentation
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-### License
-
-See LICENSE for license information.
-# Stampcoin منصة / Platform / Plattform
-
----
-
-## العربية 🇸🇦
-
-### الوصف
-Stampcoin منصة رقمية مبتكرة مبنية على تكنولوجيا البلوكشين، متخصصة في جمع وتداول الطوابع الرقمية والمكافآت وهدايا الولاء.
-
-### المميزات
-- محفظة طوابع رقمية
-- تعاملات آمنة بين المستخدمين
-- سوق طوابع رقمية ومقتنيات حديثة
-- إدارة ملفات المستخدم والتحقق
-- تكامل API وخدمات إضافية
-
-### الإنطلاق
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-لمزيد من المعلومات: [INSTALLATION.md](INSTALLATION.md)
+- 🌐 **[Online Documentation Portal](https://zedanazad43.github.io/stp/)**
+- 📁 **[docs/ Directory](docs/)**
+- 🔒 **[Security Guidelines](SECURITY.md)**
+- 📋 **[Deployment Guide](DEPLOYMENT.md)**
+- 🤝 **[Contributing Guide](CONTRIBUTING.md)**
 
 ---
 
-## English 🇬🇧
+## 🔒 Security
 
-### Description
-Stampcoin is an innovative platform for digital currency based on blockchain tech, focused on digital stamps, rewards, and loyalty tokens.
+For security information and guidelines, see **[SECURITY.md](SECURITY.md)**.
 
-### Features
-- Digital stamps wallet
-- Secure peer-to-peer transfers
-- Marketplace for digital stamps & collectibles
-- User profile & verification
-- API integration
-
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-See [INSTALLATION.md](INSTALLATION.md) for more.
+⚠️ **Important**: Always use HTTPS in production and keep your private keys secure.
 
 ---
 
-## Deutsch 🇩🇪
+## 📝 License
 
-### Beschreibung
-Stampcoin ist eine innovative Plattform auf Blockchain-Basis für digitale Briefmarken, Prämien und loyale Sammler.
+This project is licensed under the MIT License - see **[LICENSE](LICENSE)** for details.
 
-### Haupt-Features
-- Digitale Wallet für Stampcoins
-- Sichere Nutzer-Transaktionen
-- Märkte für Sammlerstücke und Stampcoins
-- Nutzerprofile & Verifikationen
-- API-Integration
+---
 
-### Start
-```
-git clone https://github.com/stampcoin-platform/stampcoin-platform.git
-cd stampcoin-platform
-```
-Weitere Infos: [INSTALLATION.md](INSTALLATION.md)
+## 👥 Contributing
+
+Contributions are welcome! See **[CONTRIBUTING.md](CONTRIBUTING.md)** for guidelines.
+
+---
+
+## 📧 Contact & Support
+
+- **Author**: Azad Zedan
+- **Repository**: [github.com/zedanazad43/stp](https://github.com/zedanazad43/stp)
+- **Issues**: [GitHub Issues](https://github.com/zedanazad43/stp/issues)
+
+---
+
+## 🌐 Website
+
+**Live Website**: https://zedanazad43.github.io/stp/
+
+---
+
+## Changelog
+
+See **[CHANGELOG.md](CHANGELOG.md)** for version history and updates.
+
+---
+
+**Last Updated**: 2025
+**Status**: ✅ Active Development
