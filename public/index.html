@@ -1,337 +1,596 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stampcoin - منصة الطوابع الرقمية - Digitale Briefmarkenplattform</title>
-    <meta name="description" content="Blockchain platform for digital stamp collection, trading and rewards">
-    <link rel="stylesheet" href="styles.css">
+    <title>Stampcoin - منصة رقمية متقدمة لجمع الطوابع | Advanced Digital Stamps Platform</title>
+    <meta name="description" content="منصة Stampcoin الرقمية المتقدمة لجمع وتداول الطوابع الرقمية. محفظة آمنة، سوق عالمي، معايير فيديرالية.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-stamp {
+            font-size: 2rem;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e55a28;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1a237e;
+        }
+        
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a237e;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* FIP Partnership Section */
+        .fip-partnership {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-left: 5px solid #1a237e;
+        }
+        
+        .fip-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .fip-text h3 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .fip-text p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .fip-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #1a237e;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .fip-link:hover {
+            background: #283593;
+        }
+        
+        .fip-badge {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        /* Security Section */
+        .security {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .security-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .security h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 2rem;
+        }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .security-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f5f5f5;
+            border-radius: 0.8rem;
+        }
+        
+        .security-item h3 {
+            color: #1a237e;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        /* API Documentation */
+        .api-section {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .api-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .api-content h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .api-endpoint {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff6b35;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .fip-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <main class="page-wrapper">
-        <!-- Multilingual Header Banner -->
-        <header class="banner-top">
-            <div class="content-box">
-                <h1 class="platform-name">
-                    <div class="name-variant">Stampcoin Platform</div>
-                    <div class="name-variant rtl-text">منصة ستامب كوين</div>
-                    <div class="name-variant">Stampcoin Plattform</div>
-                </h1>
-                <p class="tagline-group">
-                    <span class="tagline-item">Blockchain Digital Stamp Ecosystem</span>
-                    <span class="tagline-item rtl-text">نظام الطوابع الرقمية على البلوكشين</span>
-                    <span class="tagline-item">Blockchain Digitale Briefmarken System</span>
-                </p>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-stamp">🏛️</span>
+                <span>Stampcoin</span>
             </div>
-        </header>
-
-        <!-- Core Capabilities Grid -->
-        <section class="capabilities-zone">
-            <div class="content-box">
-                <h2 class="zone-heading">
-                    <span class="heading-en">Core Capabilities</span>
-                    <span class="heading-ar rtl-text">القدرات الأساسية</span>
-                    <span class="heading-de">Kernfunktionen</span>
-                </h2>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#fip">FIP Partnership</a>
+                <a href="#api">API</a>
+                <a href="https://api.stampcoin.com" target="_blank">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🏛️ Stampcoin</h1>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">منصة رقمية متقدمة لجمع الطوابع</h2>
+            <p class="hero-subtitle">Advanced Digital Stamps Platform | Plateforme Numérique de Timbres</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                منصة عالمية آمنة لجمع وتداول الطوابع الرقمية مع معايير فيديرالية عالمية
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.location='https://stampcoin.com/dashboard'">
+                    ابدأ الآن | Get Started
+                </button>
+                <button class="btn btn-secondary" onclick="document.location='#fip'">
+                    تعرف على FIP | Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section id="features" class="features">
+        <h2>المميزات الرئيسية | Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>محفظة آمنة | Secure Wallet</h3>
+                <p>محفظة رقمية آمنة تماماً مع تشفير عالي المستوى وحماية الخصوصية الكاملة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>سوق عالمي | Global Marketplace</h3>
+                <p>تبادل الطوابع مع مجمعين من جميع أنحاء العالم في سوق آمنة وموثوقة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>تتبع القيمة | Value Tracking</h3>
+                <p>تابع قيمة مجموعتك وتاريخ الأسعار مع تحليلات متقدمة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>معايير فيديرالية | FIP Standards</h3>
+                <p>تلتزم بمعايير Federation Internationale de Philatélie العالمية</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>التحويلات الآمنة | Safe Transfers</h3>
+                <p>تحويلات نقطة إلى نقطة آمنة مع سجل معاملات كامل</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>متعدد اللغات | Multilingual</h3>
+                <p>واجهة متعددة اللغات: العربية، الإنجليزية، الفرنسية، الألمانية وأكثر</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FIP Partnership -->
+    <section id="fip" class="fip-partnership">
+        <div class="fip-content">
+            <div class="fip-text">
+                <h3>🏛️ شراكة FIP الرسمية | Official FIP Partnership</h3>
+                <p>
+                    منصة Stampcoin تتبع معايير Federation Internationale de Philatélie (الاتحاد الدولي للفيلاتيليا)، 
+                    أكبر منظمة عالمية لجمع الطوابع.
+                </p>
+                <p>
+                    Stampcoin Platform adheres to the standards of Federation Internationale de Philatélie (FIP), 
+                    the world's leading philatelic organization.
+                </p>
+                <p style="font-size: 0.95rem; color: #666;">
+                    <strong>معايير FIP تشمل:</strong>
+                    <br>✓ جودة عالية من التحقق
+                    <br>✓ تصنيفات دولية موحدة
+                    <br>✓ حماية المجموعات النادرة
+                    <br>✓ معايير الحفظ الدولية
+                </p>
+                <a href="https://fip.org" target="_blank" class="fip-link">
+                    🔗 زيارة موقع FIP الرسمي
+                </a>
+            </div>
+            <div class="fip-badge">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+                <div style="color: #1a237e; font-weight: bold; font-size: 1.2rem;">
+                    معتمد من<br>FIP الدولية
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Security -->
+    <section class="security">
+        <div class="security-content">
+            <h2>🔒 الأمان والموثوقية | Security & Reliability</h2>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div style="font-size: 2rem;">🔐</div>
+                    <h3>التشفير 256-bit</h3>
+                    <p>أعلى مستويات التشفير الصناعي</p>
+                </div>
+                <div class="security-item">
+                    <div style="font-size: 2rem;">🛡️</div>
+                    <h3>2FA Authentication</h3>
+                    <p>المصادقة متعددة العوامل</p>
+                </div>
+                <div class="security-item">
+                    <div style="font-size: 2rem;">📋</div>
+                    <h3>سجل معاملات كامل</h3>
+                    <p>تتبع شامل لجميع العمليات</p>
+                </div>
+                <div class="security-item">
+                    <div style="font-size: 2rem;">✅</div>
+                    <h3>توثيق الأصالة</h3>
+                    <p>التحقق الدولي من الطوابع</p>
+                </div>
+                <div class="security-item">
+                    <div style="font-size: 2rem;">📞</div>
+                    <h3>دعم 24/7</h3>
+                    <p>دعم عملاء على مدار الساعة</p>
+                </div>
+                <div class="security-item">
+                    <div style="font-size: 2rem;">🌐</div>
+                    <h3>HTTPS الكامل</h3>
+                    <p>اتصالات مشفرة دائماً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- API Section -->
+    <section id="api" class="api-section">
+        <div class="api-content">
+            <h2>📡 REST API - للمطورين | For Developers</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                واجهة برمجية قوية وموثقة بالكامل للتكامل مع تطبيقاتك
+            </p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="margin-bottom: 1rem;">Wallet Endpoints</h3>
+                <div class="api-endpoint">GET /api/wallet/{id} - الحصول على محفظة</div>
+                <div class="api-endpoint">POST /api/wallet - إنشاء محفظة جديدة</div>
+                <div class="api-endpoint">POST /api/transfer - تحويل طوابع</div>
                 
-                <div class="capability-grid">
-                    <article class="capability-box">
-                        <div class="icon-display">💎</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Digital Wallet</span>
-                            <span class="label-ar rtl-text">المحفظة الرقمية</span>
-                            <span class="label-de">Digitale Geldbörse</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">Store and manage blockchain-verified stamp collections securely</span>
-                            <span class="detail-ar rtl-text">احفظ وأدر مجموعات الطوابع الموثقة بالبلوكشين بأمان</span>
-                            <span class="detail-de">Speichern und verwalten Sie blockchain-verifizierte Briefmarkensammlungen sicher</span>
-                        </p>
-                    </article>
-
-                    <article class="capability-box">
-                        <div class="icon-display">🔒</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Peer Transfers</span>
-                            <span class="label-ar rtl-text">التحويلات المباشرة</span>
-                            <span class="label-de">Peer-Übertragungen</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">Direct user-to-user transfers with cryptographic protection</span>
-                            <span class="detail-ar rtl-text">نقل مباشر بين المستخدمين مع حماية تشفيرية</span>
-                            <span class="detail-de">Direkte Benutzer-zu-Benutzer-Übertragungen mit kryptografischem Schutz</span>
-                        </p>
-                    </article>
-
-                    <article class="capability-box">
-                        <div class="icon-display">🛒</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Trading Hub</span>
-                            <span class="label-ar rtl-text">مركز التداول</span>
-                            <span class="label-de">Handelszentrum</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">Exchange rare stamps and collectibles in verified marketplace</span>
-                            <span class="detail-ar rtl-text">تبادل الطوابع النادرة والمقتنيات في سوق موثق</span>
-                            <span class="detail-de">Tauschen Sie seltene Briefmarken und Sammlerstücke auf dem verifizierten Marktplatz</span>
-                        </p>
-                    </article>
-
-                    <article class="capability-box">
-                        <div class="icon-display">👤</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Identity System</span>
-                            <span class="label-ar rtl-text">نظام الهوية</span>
-                            <span class="label-de">Identitätssystem</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">Verified accounts with reputation tracking and history logs</span>
-                            <span class="detail-ar rtl-text">حسابات موثقة مع تتبع السمعة وسجلات التاريخ</span>
-                            <span class="detail-de">Verifizierte Konten mit Reputationsverfolgung und Verlaufsprotokollen</span>
-                        </p>
-                    </article>
-
-                    <article class="capability-box">
-                        <div class="icon-display">🔌</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Developer API</span>
-                            <span class="label-ar rtl-text">واجهة المطورين</span>
-                            <span class="label-de">Entwickler-API</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">REST endpoints for external application connectivity</span>
-                            <span class="detail-ar rtl-text">نقاط REST للاتصال بالتطبيقات الخارجية</span>
-                            <span class="detail-de">REST-Endpunkte für externe Anwendungskonnektivität</span>
-                        </p>
-                    </article>
-
-                    <article class="capability-box">
-                        <div class="icon-display">🏆</div>
-                        <h3 class="capability-label">
-                            <span class="label-en">Loyalty Program</span>
-                            <span class="label-ar rtl-text">برنامج الولاء</span>
-                            <span class="label-de">Treueprogramm</span>
-                        </h3>
-                        <p class="capability-detail">
-                            <span class="detail-en">Accumulate reward tokens through active participation</span>
-                            <span class="detail-ar rtl-text">اجمع رموز المكافآت من خلال المشاركة النشطة</span>
-                            <span class="detail-de">Sammeln Sie Belohnungs-Token durch aktive Teilnahme</span>
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- REST API Technical Specs -->
-        <section class="technical-zone">
-            <div class="content-box">
-                <h2 class="zone-heading">
-                    <span class="heading-en">REST API Specifications</span>
-                    <span class="heading-ar rtl-text">مواصفات واجهة REST</span>
-                    <span class="heading-de">REST-API-Spezifikationen</span>
-                </h2>
-
-                <div class="api-overview">
-                    <p class="overview-text">
-                        <span class="text-en">Stampcoin provides HTTP endpoints for synchronization of stamp data. Authentication uses Bearer tokens in request headers.</span>
-                        <span class="text-ar rtl-text">يوفر Stampcoin نقاط HTTP لمزامنة بيانات الطوابع. المصادقة تستخدم رموز Bearer في رؤوس الطلبات.</span>
-                        <span class="text-de">Stampcoin bietet HTTP-Endpunkte zur Synchronisierung von Briefmarkendaten. Die Authentifizierung verwendet Bearer-Token in Anforderungsheadern.</span>
-                    </p>
-                </div>
-
-                <div class="endpoint-collection">
-                    <div class="endpoint-block">
-                        <h3 class="method-badge retrieve">GET /sync</h3>
-                        <p class="endpoint-explain">
-                            <span class="explain-en">Fetch current stamp/todo records from server storage</span>
-                            <span class="explain-ar rtl-text">احضر سجلات الطوابع/المهام الحالية من تخزين الخادم</span>
-                            <span class="explain-de">Aktuelle Briefmarken-/Todo-Datensätze vom Serverspeicher abrufen</span>
-                        </p>
-                        <div class="code-sample">
-                            <pre><code>curl -X GET https://api.stampcoin.platform/sync \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE"</code></pre>
-                        </div>
-                        <div class="response-demo">
-                            <strong>Server Response:</strong>
-                            <pre><code>{
-  "todos": [
-    {
-      "id": 1,
-      "text": "Digital Stamp #001",
-      "completed": false
-    }
-  ]
-}</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="endpoint-block">
-                        <h3 class="method-badge submit">POST /sync</h3>
-                        <p class="endpoint-explain">
-                            <span class="explain-en">Push updated stamp/todo records to server storage</span>
-                            <span class="explain-ar rtl-text">ادفع سجلات الطوابع/المهام المحدثة إلى تخزين الخادم</span>
-                            <span class="explain-de">Aktualisierte Briefmarken-/Todo-Datensätze zum Serverspeicher senden</span>
-                        </p>
-                        <div class="code-sample">
-                            <pre><code>curl -X POST https://api.stampcoin.platform/sync \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "todos": [
-      {
-        "id": 1,
-        "text": "Digital Stamp #001",
-        "completed": true
-      }
-    ]
-  }'</code></pre>
-                        </div>
-                        <div class="response-demo">
-                            <strong>Server Response:</strong>
-                            <pre><code>{
-  "ok": true
-}</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="auth-requirements">
-                    <h3 class="auth-title">
-                        <span class="title-en">Authentication Protocol</span>
-                        <span class="title-ar rtl-text">بروتوكول المصادقة</span>
-                        <span class="title-de">Authentifizierungsprotokoll</span>
-                    </h3>
-                    <p class="auth-info">
-                        <span class="info-en">Include Bearer token via Authorization header. Configure <code>SYNC_TOKEN</code> environment variable to activate authentication checks.</span>
-                        <span class="info-ar rtl-text">قم بتضمين رمز Bearer عبر رأس التفويض. قم بتكوين متغير البيئة <code>SYNC_TOKEN</code> لتنشيط فحوصات المصادقة.</span>
-                        <span class="info-de">Bearer-Token über Authorization-Header einschließen. Konfigurieren Sie die Umgebungsvariable <code>SYNC_TOKEN</code>, um Authentifizierungsprüfungen zu aktivieren.</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Setup Instructions -->
-        <section class="setup-zone">
-            <div class="content-box">
-                <h2 class="zone-heading">
-                    <span class="heading-en">Getting Started</span>
-                    <span class="heading-ar rtl-text">البداية</span>
-                    <span class="heading-de">Erste Schritte</span>
-                </h2>
-
-                <div class="instruction-flow">
-                    <div class="instruction-item">
-                        <div class="step-marker">1</div>
-                        <h3 class="step-title">
-                            <span class="title-en">Repository Clone</span>
-                            <span class="title-ar rtl-text">استنساخ المستودع</span>
-                            <span class="title-de">Repository Klonen</span>
-                        </h3>
-                        <div class="code-sample">
-                            <pre><code>git clone https://github.com/zedanazad43/stp.git
-cd stp</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="instruction-item">
-                        <div class="step-marker">2</div>
-                        <h3 class="step-title">
-                            <span class="title-en">Package Installation</span>
-                            <span class="title-ar rtl-text">تثبيت الحزم</span>
-                            <span class="title-de">Paketinstallation</span>
-                        </h3>
-                        <div class="code-sample">
-                            <pre><code>npm install</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="instruction-item">
-                        <div class="step-marker">3</div>
-                        <h3 class="step-title">
-                            <span class="title-en">Environment Configuration</span>
-                            <span class="title-ar rtl-text">إعداد البيئة</span>
-                            <span class="title-de">Umgebungskonfiguration</span>
-                        </h3>
-                        <div class="code-sample">
-                            <pre><code>export SYNC_TOKEN="your-secret-token"
-export PORT=8080</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="instruction-item">
-                        <div class="step-marker">4</div>
-                        <h3 class="step-title">
-                            <span class="title-en">Launch Application</span>
-                            <span class="title-ar rtl-text">إطلاق التطبيق</span>
-                            <span class="title-de">Anwendung starten</span>
-                        </h3>
-                        <div class="code-sample">
-                            <pre><code>npm start</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Documentation Resources -->
-        <section class="resources-zone">
-            <div class="content-box">
-                <h2 class="zone-heading">
-                    <span class="heading-en">Documentation Resources</span>
-                    <span class="heading-ar rtl-text">موارد التوثيق</span>
-                    <span class="heading-de">Dokumentationsressourcen</span>
-                </h2>
-
-                <div class="resource-grid">
-                    <a href="https://github.com/zedanazad43/stp/blob/main/README.md" class="resource-link">
-                        <span class="resource-symbol">📖</span>
-                        <span class="resource-label">README</span>
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Marketplace Endpoints</h3>
+                <div class="api-endpoint">GET /api/market/items - قائمة السلع</div>
+                <div class="api-endpoint">POST /api/market/buy - شراء طابع</div>
+                <div class="api-endpoint">POST /api/market/sell - بيع طابع</div>
+                
+                <p style="margin-top: 2rem; text-align: center;">
+                    📖 <a href="https://api.stampcoin.com/docs" style="color: #ff6b35; text-decoration: none; font-weight: bold;">
+                        اقرأ التوثيق الكامل للـ API
                     </a>
-                    <a href="https://github.com/zedanazad43/stp/blob/main/INSTALLATION.md" class="resource-link">
-                        <span class="resource-symbol">⚙️</span>
-                        <span class="resource-label">INSTALLATION</span>
-                    </a>
-                    <a href="https://github.com/zedanazad43/stp/blob/main/DEPLOYMENT.md" class="resource-link">
-                        <span class="resource-symbol">🚀</span>
-                        <span class="resource-label">DEPLOYMENT</span>
-                    </a>
-                    <a href="https://github.com/zedanazad43/stp/blob/main/SECURITY.md" class="resource-link">
-                        <span class="resource-symbol">🔒</span>
-                        <span class="resource-label">SECURITY</span>
-                    </a>
-                    <a href="https://github.com/zedanazad43/stp/blob/main/CONTRIBUTING.md" class="resource-link">
-                        <span class="resource-symbol">🤝</span>
-                        <span class="resource-label">CONTRIBUTING</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bottom Footer -->
-        <footer class="bottom-bar">
-            <div class="content-box">
-                <p class="copyright-notice">
-                    <span class="notice-en">© 2026 Stampcoin Platform. Powered by Blockchain Technology.</span>
-                    <span class="notice-ar rtl-text">© 2026 منصة ستامب كوين. مدعومة بتقنية البلوكشين.</span>
-                    <span class="notice-de">© 2026 Stampcoin Plattform. Angetrieben von Blockchain-Technologie.</span>
                 </p>
-                <div class="link-group">
-                    <a href="https://github.com/zedanazad43/stp" target="_blank" class="footer-link">GitHub</a>
-                    <span class="divider">•</span>
-                    <a href="https://github.com/zedanazad43/stp/issues" target="_blank" class="footer-link">
-                        <span class="link-en">Issues</span>
-                        <span class="link-ar rtl-text">المشاكل</span>
-                        <span class="link-de">Probleme</span>
-                    </a>
-                    <span class="divider">•</span>
-                    <a href="https://github.com/zedanazad43/stp/blob/main/LICENSE" target="_blank" class="footer-link">
-                        <span class="link-en">License</span>
-                        <span class="link-ar rtl-text">الترخيص</span>
-                        <span class="link-de">Lizenz</span>
-                    </a>
-                </div>
             </div>
-        </footer>
-    </main>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن Stampcoin | About</h3>
+                <a href="#features">المميزات | Features</a>
+                <a href="#fip">شراكة FIP | FIP Partnership</a>
+                <a href="#api">API التوثيق | Documentation</a>
+            </div>
+            <div class="footer-section">
+                <h3>الموارد | Resources</h3>
+                <a href="https://github.com/zedanazad43/stp" target="_blank">GitHub Repository</a>
+                <a href="https://api.stampcoin.com" target="_blank">API Endpoint</a>
+                <a href="/docs" target="_blank">الوثائق الكاملة | Full Docs</a>
+            </div>
+            <div class="footer-section">
+                <h3>التواصل | Contact</h3>
+                <a href="mailto:info@stampcoin.com">info@stampcoin.com</a>
+                <a href="https://fip.org" target="_blank">🔗 FIP Official Website</a>
+                <p style="color: #aaa; margin-top: 1rem; font-size: 0.9rem;">
+                    معتمدة من Federation Internationale de Philatélie
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stampcoin Platform. جميع الحقوق محفوظة | All Rights Reserved</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Made with ❤️ for Stamp Collectors Worldwide | مع الحب لجامعي الطوابع حول العالم
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
