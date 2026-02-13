@@ -87,6 +87,14 @@ EOF
           NODE_ENV=production
           PORT=8080
           HOST=0.0.0.0
+          RENDER_OUTBOUND_IPS="74.220.48.0/24 74.220.56.0/24"
         dockerfilePath: ./Dockerfile
         docker_context: .
         dockerfile: Dockerfile
+        docker_build_command: docker build -t stampcoin-platform .
+        service_region: oregon
+        service_instance_type: starter
+        service_health_check_path: /
+        service_health_check_timeout: 60s
+        logs_url: https://api.render.com/services/$SERVICE_ID/logs
+        on_failure: always
