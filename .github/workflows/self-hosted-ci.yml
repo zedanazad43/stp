@@ -1,6 +1,10 @@
 ---
 name: Self-Hosted CI
 
+# هذا السير عمل يستخدم عدادًا مخصصًا (self-hosted runner) بدلاً من العداد الافتراضي
+# للتنفيذ، يجب عليك إعداد عداد مخصص مع التسميات: self-hosted, linux
+# راجع SELF_HOSTED_RUNNER_SETUP.md للحصول على تعليمات مفصلة
+
 "on":
   push:
     branches:
@@ -11,6 +15,8 @@ name: Self-Hosted CI
 
 jobs:
   build-and-test:
+    # يستخدم هذا العداد المخصص المكون بـ [self-hosted, linux]
+    # تأكد من أنك قمت بإعداد العداد المخصص وفقًا لـ SELF_HOSTED_RUNNER_SETUP.md
     runs-on: [self-hosted, linux]
     permissions:
       contents: read
@@ -40,6 +46,8 @@ jobs:
         run: npm run build --if-present
 
   docker-build:
+    # يستخدم هذا العداد المخصص المكون بـ [self-hosted, linux]
+    # مهمة DockerBuild تعتمد على نجاح مهمة build-and-test
     runs-on: [self-hosted, linux]
     needs: build-and-test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -49,5 +57,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t stampcoin-platform .
+
+      - name: Push Docker image (إذا كان هناك سجل Docker)
+        run: |
+          if [ -n "$DOCKER_USERNAME" ] && [ -n "$DOCKER_PASSWORD" ]; then
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            docker push stampcoin-platform
+          else
+            echo "بيانات اعتماد Docker غير متوفرة، سيتم تخطي عملية الدفع"
+          fi
 
       
