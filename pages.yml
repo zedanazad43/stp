@@ -3,6 +3,7 @@ name: Build and Deploy to Render
 on:
   push:
     branches: [ main, master ]
+  workflow_dispatch:  # السماح بتشغيل يدوي
 
 jobs:
   build-and-deploy:
@@ -71,8 +72,21 @@ EOF
           echo "index.html already exists"
         fi
 
+    - name: Build Docker image
+      run: |
+        docker build -t stampcoin-platform .
+
     - name: Deploy to Render
       uses: appleboy/render-action@master
       with:
         service_id: ${{ secrets.RENDER_SERVICE_ID }}
         api_key: ${{ secrets.RENDER_API_KEY }}
+        service_name: stampcoin-platform
+        service_type: web
+        env_vars: |
+          NODE_ENV=production
+          PORT=8080
+          HOST=0.0.0.0
+        dockerfilePath: ./Dockerfile
+        docker_context: .
+        dockerfile: Dockerfile
