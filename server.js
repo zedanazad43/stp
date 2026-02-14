@@ -60,6 +60,6 @@ app.post("/sync", requireToken, async (req, res) => {
 });
 
 const port = process.env.PORT || 8080;
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Stampcoin Platform server listening on port ${port}`);
 });
