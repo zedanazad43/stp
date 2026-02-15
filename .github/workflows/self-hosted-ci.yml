@@ -15,9 +15,9 @@ name: Self-Hosted CI
 
 jobs:
   build-and-test:
-    # يستخدم هذا العداد المخصص المكون بـ [self-hosted, linux]
+    # يستخدم هذا العداد المخصص المكون بـ [self-hosted,windows-latest]
     # تأكد من أنك قمت بإعداد العداد المخصص وفقًا لـ SELF_HOSTED_RUNNER_SETUP.md
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, windows-latest]
     permissions:
       contents: read
 
@@ -46,9 +46,9 @@ jobs:
         run: npm run build --if-present
 
   docker-build:
-    # يستخدم هذا العداد المخصص المكون بـ [self-hosted, linux]
+    # يستخدم هذا العداد المخصص المكون بـ [self-hosted, windows-latest]
     # مهمة DockerBuild تعتمد على نجاح مهمة build-and-test
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, windows-latest]
     needs: build-and-test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
